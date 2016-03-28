@@ -1,0 +1,8 @@
+				a.browse-file { padding: 4px 15px; margin: 5px 0; float: left; }
+				span.file-input { display: none;  }
+				.fm-file-row.active { background: #FFB7B8; }
+				
+				.progress-box { display: none; max-width: 200px; }
+					.progress-bar-box {  border: 1px solid #222; margin-top: 5px; }
+					.progress-header { font-size: 14px; display: block; }
+					.progress-bar { height: 15px; background: #E99711; width: 0; }

@@ -1,0 +1,94 @@
+img { border: 0; }
+form.inline { display: inline; }
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+}
+	 
+body {  margin: 0; }
+	.body-bg { background: #fff; }
+	.clear { clear: both; }
+	.br { height: 5px; font-size: 5px; }
+	.br2 { height: 10px; font-size: 10px; }
+	.msg { background: #ffeda4; color: #be0000; text-align: center; margin: 10px 0; padding: 0; display: block; }
+	.pad1 { padding: 5px; }
+	.pad2 { padding: 10px; }
+	.nu { text-decoration: none; }
+	.odd { background: #eeeeee; }
+	.even { background: #ffffff; }
+	.center { text-align: center; }
+	.middle { vertical-align: middle; }
+	.bold { font-weight: bold; }
+	.lt { text-align: left; }
+	.rt { text-align: right; }
+	.h1 { font-size: 18px; }
+	.req { color: #be0000; }
+	.big { font-size: 20px; }
+	.med { font-size: 16px; }
+	.sm { font-size: 12px; }
+	.lift { position: relative; top: -3px; }
+	.form-ul { list-style: none; padding: 0; margin: 0; }
+		.form-ul li { margin-bottom: 10px; clear: both; }
+		.form-ul li.field-submit { padding-top: 15px; }
+			.form-ul li label { float: left; width: 120px; text-align: right; padding-right: 10px; }
+				.form-ul li .missing { color: #be0000; font-weight: bold;}
+			.form-ul li strong { color: #be0000;}
+			.form-ul li span.req {color: #be0000; font-weight: bold; margin-right: 2px; }
+			.form-ul li .same-width { width: 187px; }
+			.form-ul li .same-width-2 { width: 189px; }
+	.form-error-ul { list-style: none; }
+	
+	.list { list-style: none; }
+		.list li { margin-bottom: 10px; clear: both;}
+			.list li label { float: left; width: 130px; text-align: right; padding-right: 10px; }
+	.tbl { width: 100%; border-collapse: collapse;  }
+
+	.more { font-size: 10px; font-weight: bold;  }
+	.content-padding { padding: 0 20px 20px 20px; }
+	.template-name { position:absolute; background: #eee; color: black; padding: 1px 2px; margin: 2px; }
+		
+	#install { width: 900px; margin: 0 auto; }
+		
+	#page-not-found { height: 500px; padding-top: 50px; }	
+	
+	#captcha_box { float: left; width: 260px; }
+		#siimage { padding-right: 5px; float: left; }
+		#captcha_box a,
+		#captcha_box object { float: right; clear:right; margin: 5px 0;}
+	
+	.jqibox  { z-index: 10000 !important; }
+	.jqifade{ position: absolute; background-color: #aaaaaa; }
+	div.jqi{ width: 600px; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; position: absolute; background-color: #ffffff; font-size: 11px; text-align: left; border: solid 1px #eeeeee; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; padding: 7px; }
+	div.jqi .jqicontainer{ font-weight: bold; }
+	div.jqi .jqiclose{ display: none; position: absolute; top: 4px; right: -2px; width: 18px; cursor: default; color: #bbbbbb; font-weight: bold; }
+	div.jqi .jqimessage{ margin: 20px 0 0; line-height: 20px; color: #444444; }
+		div.jqi .jqimessage ul { margin: 0; padding: 0;}
+			div.jqi .jqimessage ul li { border: 1px dotted #eee; padding: 3px 10px; margin-bottom: 5px; line-height: 1.3em; font-size: 16px; color: #444444; list-style: none; }
+	div.jqi .jqibuttons{ text-align: right; padding: 5px 0 5px 0; border: dotted 1px #eeeeee; border-radius: 0 0 5px 5px; }
+	div.jqi button{   padding: 3px 10px; margin: 0 10px; background-color: #2F6073; border: solid 1px #f4f4f4; color: #ffffff; font-weight: bold; font-size: 16px; cursor: pointer; }
+	div.jqi button.jqidefaultbutton{ background-color: #BF5E26; }
+	.jqiwarning .jqi .jqibuttons{ background-color: #BF5E26; }
+	div.jqi button:hover{ opacity: .6;}
+	
+	.admin-editable { }
+		.admin-editable a { text-decoration: none; }
+		
+	#search-result h3 a	{ font-weight: bold; text-decoration: none; }			
+	#search-result h3,#search-result p { margin: 0; }
+
+	#password-reset { padding: 10px 20px; }
+		#password-reset input.text { font-size: 16px;padding: 10px 5px 5px 5px;width: 323px;border: 1px solid white; }
+		#password-reset button.btn { padding: 8px 15px; background: #e5ad32; color: white; border: 0; font-size: 14px; cursor: pointer; text-transform: uppercase; }
+
+.calendar { width: 100%; border: 1px solid black;  }
+	.calendar td.day-label { height: 20px; text-align: center; background: white; }
+	.calendar td { padding: 5px;  border: 1px solid black; vertical-align: top; }
+	.calendar td.in-month { background: #ddd; }
+	.calendar td.today { background: #ffedee; }
+
+.system-load-time { padding: 10px 0;  margin: 0; }

@@ -1,0 +1,90 @@
+.jcarousel-container { }
+
+.jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.jcarousel-container-horizontal {
+    width: 500px;
+    padding: 0;
+}
+
+.jcarousel-container-vertical {
+    width: 75px;
+    height: 245px;
+    padding: 40px 20px;
+}
+
+.jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-clip-horizontal {
+    width:  450px;
+    height: 60px;
+	left: 20px;
+}
+
+.jcarousel-clip-vertical {
+    width:  77px;
+    height: 245px;
+}
+
+.jcarousel-item {
+    width: 80px;
+    height: 60px;
+}
+
+.jcarousel-item:hover,
+.jcarousel-item:focus {
+    border-color: #808080;
+}
+
+.jcarousel-item-horizontal {
+	margin: 0 0 0 10px; 
+}
+
+.jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 7px;
+	margin-right: 0;
+}
+
+.jcarousel-item-vertical {
+    margin-bottom: 7px;
+}
+
+.jcarousel-item-placeholder {
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-next-horizontal {
+    position: absolute;
+   	right: 0;
+	top: 0;
+    width: 20px;
+    height: 100%;
+    cursor: pointer;
+    background: url('carousel-next.gif') no-repeat;
+}
+
+.jcarousel-next-horizontal:hover {
+    background: url('carousel-next-active.gif') no-repeat;
+}
+
+.jcarousel-prev-horizontal {
+    position: absolute;
+   	left: 0;
+	top: 0;
+    width: 20px;
+    height: 100%;
+    cursor: pointer;
+    background: url('carousel-prev.gif') no-repeat;
+}
+
+.jcarousel-prev-horizontal:hover {
+    background: url('carousel-prev-active.gif') no-repeat;
+}
+
+.jcarousel-prev-disabled, .jcarousel-next-disabled { visibility: hidden; }
