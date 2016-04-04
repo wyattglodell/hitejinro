@@ -16,6 +16,7 @@
 		protected $css = array();
 		protected $last_css = array();
 		protected $last_js = array();
+		protected $js_type = array();
 
 		function __construct()
 		{
@@ -81,7 +82,7 @@
 			}	
 		}
 		
-		function add_js($root, $js, $last=false)
+		function add_js($root, $js, $type, $last=false)
 		{
 			$full_path = substr($js, 0, 4) != 'http' && substr($js,0,1) != '/' ? $root.'/'.$js : $js;
 
@@ -89,7 +90,9 @@
 				$this->last_js[$full_path] = $full_path;
 			} else {
 				$this->js[$full_path] = $full_path;
-			}	
+			}
+			
+			$this->js_type[$full_path] = $type;
 		}
 		
 		function css($css, $last=false)
@@ -107,14 +110,14 @@
 			$this->js = array();
 		}
 		
-		function js($js, $last=false)
+		function js($js, $type, $last=false)
 		{
-			$this->add_js($this->js_root,$js,$last);
+			$this->add_js($this->js_root,$js,$type,$last);
 		}
 		
 		function base_js($js, $last=false)
 		{
-			$this->add_js($this->base_js_root,$js,$last);
+			$this->add_js($this->base_js_root,$js, 'javascript', $last);
 		}
 		
 		
@@ -202,7 +205,7 @@
 				# JS CACHING
 				$hash = substr(md5(implode('', (array) $this->js). implode('', (array) $this->last_js)), 0 , 10);
 				$file = $this->conf->public_cache_dir.'/'.$hash.'.js';
-			
+				
 				if (file_exists($file)) {
 					$time = filemtime($file) + $this->setting->cache_expiration;	
 					if ($time >= time()) {
@@ -253,7 +256,8 @@
 						$url = substr($v, 0, 4) == 'http' || substr($v, 0, 2) == '//' ? $v : $doc_root.$v;
 						$js_string .= file_get_contents($url);
 					} else if (!$cache) {
-						$this->data['js_inc'] .= "<script type='text/javascript' src='$v'></script>\n";
+
+						$this->data['js_inc'] .= "<script". ($this->js_type[$v] ? " type='text/".$this->js_type[$v]."'" : "") ." src='$v'></script>\n";
 					}
 				}
 			}

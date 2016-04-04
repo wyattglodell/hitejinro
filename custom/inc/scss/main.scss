@@ -1,0 +1,45 @@
+//font
+.font-header {
+	font-family: 'proxima-nova-alt-ext-cond', 'Open Sans', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.font-header-heavy {
+	@extend .font-header;
+	font-weight: 600;
+}
+
+.font-body {
+	font-family: 'proxima-nova-alt-condensed', 'Open Sans', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 100;
+}
+
+//color
+$color-gray-dark: #676c70;
+$color-gray-med: #909090;
+$color-gray-light: #e8e9ea;
+$color-hite-main: #16284c;
+$color-hite-tint: #b7c0c8;
+$color-jinro-main: #60bb46;
+$color-jinro-tint: #b0f29d;
+$color-text-main: #000000;
+
+//global element styles
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+button:focus,
+input:focus,
+textarea:focus, 
+select:focus {
+    outline: none;
+}
+
+body {
+	@extend .font-body;
+}

@@ -180,6 +180,7 @@ $(function() {
 		$('#admin_menu a.here.main').parent().find('ul.sub').show();
 		
 		$('#admin_menu a.main').click(function(e) {
+			
 			if ($(this).parent().find('ul.sub').length) {
 				e.preventDefault();
 				
