@@ -4,6 +4,6 @@
 	if (!$site) $func->redirect('/entry');
 	
 	if ($func->load_data($site.'/'.$get->a, true)) {
-		include ($func->load_data($site.'/'.$get->a, true));
+		$func->load_data($site.'/'.$get->a);
 	}
 ?>

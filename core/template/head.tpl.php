@@ -1,5 +1,6 @@
 <base href='<?php echo $https?>' />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $metatitle?></title>
 <meta name='description' content='<?php echo $metadescription?>' />
 <meta name='keywords' content='<?php echo $metakeyword?>' />

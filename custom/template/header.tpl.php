@@ -1,65 +1,55 @@
-<header class="main"></header>
+<?php
+	$sites = Site::$sites;
+	$site = Site::get_current_site();
+	if ($site) $navigation = $site_data['content'][$site]['pages'];
+?>
 
-<script type="text/babel">
-	class Header extends React.Component {
-		constructor(props) {
-			super(props);
-			this.state = {
-				currentSite: '<?php echo Site::get_current_site() ?>'
-			}
+<div id='site-toggle-bar' class="<?php echo $site ?>">
+	<?php
+		foreach ($sites as $v)
+		{
+			echo "<a href='?site=$v' class='site-toggle".($v === $site ? " active" : "")."'><span class='$v'></span></a>";
 		}
-
-		render() {
-			var site_data = JSON.parse('<?php echo json_encode($site_data) ?>');
-
-			return (
-				<div>
-					<SitesToggle
-						sites={['hite', 'jinro']}
-						currentSite={this.state.currentSite} />
-					<Navigation items={site_data.theme.pages[this.state.currentSite]} />
-					<h1>
-						<a href={'?site=' + this.state.currentSite}>
-							<img src={'/public/img/logo_' + this.state.currentSite + '.png'}
-							alt={this.state.currentSite + ' logo'} />
-						</a>
-					</h1>
-					<Social items={site_data.theme.social} />
-				</div>
-			);
-		}
-	}
-
-	const SitesToggle = (props) => 
-		<div>
-			{props.sites.map((site, i) => {
-				return <Site key={i} site={site} currentSite={props.currentSite} />;
-			})}
-		</div>
-
-	const Site = (props) => 
-		<a href={'?site=' + props.site}
-			className={props.currentSite === props.site ? 'active' : null}>
-			<span>
-				<img
-					src={'/public/img/logo_sm_' + props.site + '.png'}
-					alt={'switch to' + props.site} />
-			</span>
+	?>
+</div>
+<div class='container ctrl-links'>
+	<a id="menu-toggle"><span></span></a>
+	<div class='logo-wrapper'>
+		<a class='site-logo' href="?site=<?php echo $site ?>">
+			<img src="/public/img/logo_<?php echo $site ?>.png"
+				 srcset="/public/img/logo_<?php echo $site ?>.png 768w,
+				 		/public/img/logo_sm_<?php echo $site ?>.png 310w">
 		</a>
-
-	const Navigation = (props) => 
+	</div>
+</div>
+<div id='links-panel' class='container'>
+	<nav class='nav-links'>
+		<a class='site-logo' href="?site=<?php echo $site ?>">
+			<img src="/public/img/logo_<?php echo $site ?>.png"
+				 srcset="/public/img/logo_<?php echo $site ?>.png 768w,
+				 		/public/img/logo_sm_<?php echo $site ?>.png 310w">
+		</a>
 		<ul>
-			{props.items.map((item, key) =>
-				<li key={key}><a href={item.link}>{item.headline}</a></li>
-			)}
+			<?php
+				foreach ($navigation as $nav)
+				{
+					echo "<li>";
+					echo "<a href='$nav[link]'>$nav[headline]</a>";
+					echo "</li>";
+				}
+			?>
 		</ul>
-		
-	const Social = (props) => 
+	</nav>
+	<div class='social-links'>
 		<ul>
-			{Object.keys(props.items).map((key) =>
-				<li key={key}><a href={props.items[key]}><span className={'icon icon-' + key}></span>{key[0]}</a></li>
-			)}
+			<?php
+				foreach ($site_data['theme']['global']['social'] as $social=>$link)
+				{
+					echo "<li>";
+					echo "<a href='$link'><span class='icon icon-$social'></span></a>";
+					echo "</li>";
+				}
+			?>
 		</ul>
-
-	ReactDOM.render(<Header />, document.querySelector('header.main'));
-</script>
+	</div>
+</div>

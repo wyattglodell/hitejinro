@@ -112,6 +112,7 @@
 		
 		function js($js, $type, $last=false)
 		{
+			$type = $type ? $type : 'javascript';
 			$this->add_js($this->js_root,$js,$type,$last);
 		}
 		

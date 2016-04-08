@@ -5,19 +5,22 @@
 		
 		function set_site_data()
 		{
-			$_SESSION['data']['theme'] = array(
+			$_SESSION['data']['theme']['global'] = array(
 				'social' => array(
 					'facebook' => 'https://www.facebook.com/hitejinro',
 					'twitter' => 'https://twitter.com/HiteJinroUSA',
 					'instagram' => 'https://www.instagram.com/hitejinrousa/'
 				),
-				'footer_links' => array(
+				'footer_navigation' => array(
 					'terms & conditions' => '/terms-and-conditions',
 					'privacy policy' => '/privacy-policy',
 					'contact us' => '/contact-us',
 				),
-				'pages' => array(
-					self::$sites[0] => array(
+			);
+
+			$_SESSION['data']['content'] = array(
+				'hite' => array(
+					'pages' => array(
 						array(
 							'headline'=>'about',
 							'link'=>'/about',
@@ -65,9 +68,16 @@
 							'featuredOrder'=>null,
 							'subtitle'=>'',
 							'img'=>'',
-						),
+						)
 					),
-					self::$sites[1] => array(
+					'brand_intro' => array(
+						'headline' => 'It\'s more than <span>just beer</span>',
+						'description' => 'Hite is Korea\'s largest and leading brewery with approximately 60% of the nation\'s domestic beer market share. Hite has been the number one beer brand in Korea for more than 16 years, and now exports its product to loyal Hite customers in more than 50 countries around the world!',
+						'img' => 'home_brand.png'
+					)
+				),
+				'jinro' => array(
+					'pages' => array(
 						array(
 							'headline'=>'about',
 							'link'=>'/about',
@@ -115,8 +125,13 @@
 							'featuredOrder'=>null,
 							'subtitle'=>'',
 							'img'=>'',
-						),
+						)
 					),
+					'brand_intro' => array(
+						'headline' => 'Number one <span>soju brand</span>',
+						'description' => 'Since its launch in 1924, Jinro has consistently held is position as the number one soju brand in Korea. As such, it is not an exaggeration to say that Jinro Soju has played a pivotal role in establishing and evolving Korea\'s drinking culture.',
+						'img' => 'home_brand.png'
+					)
 				),
 			);
 		}
@@ -136,8 +151,18 @@
 			if (isset(	$_SESSION['site'][$var] )) {
 				return $_SESSION['site'][$var];
 			} else {
-				return NULL;	
+				return NULL;
 			}
+		}
+		
+		function set_age($min_age)
+		{
+			$_SESSION['age'] = $min_age;
+		}
+		
+		function age_verified()
+		{
+			return $_SESSION['age']	>= 21;
 		}
 
 		function set_current_site($val)
@@ -147,11 +172,24 @@
 
 		function get_current_site()
 		{
-			if ($_SESSION['site'] && in_array($_SESSION['site'], self::$sites)) {
-				return $_SESSION['site'];
-			} else {
-				return NULL;
-			}
+			#if ($_SESSION['site'] && in_array($_SESSION['site'], self::$sites)) {
+			return $_SESSION['site'];
+			#} else {
+			#	return NULL;
+			#}
+		}
+
+		function get_featured_pages($pages)
+		{
+			$featured = array_filter($pages, function($arr) {
+				return $arr['featured'];
+			});
+
+			usort($featured, function($a, $b) {
+				return strcmp($a['featuredOrder'], $b['featuredOrder']);
+			});
+
+			return $featured;
 		}
 	}
 ?>
