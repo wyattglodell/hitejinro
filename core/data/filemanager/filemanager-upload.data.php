@@ -63,8 +63,10 @@
 							$copy_file = true;
 							
 							$img = new Image($file);
-							if ($img->is_img() && $conf->thumbnails) {
-								foreach ($conf->thumbnails as $name=>$dim)
+							if ($img->is_img() && ($conf->thumbnails || $_SESSION['thumbnails'])) {
+								$thumbnails = array_merge((array)$conf->thumbnails, (array)$_SESSION['thumbnails']);
+								
+								foreach ($thumbnails as $name=>$dim)
 								{
 									$data = explode('@', $dim);
 									$d = explode('x', $data[0]);

@@ -2,8 +2,7 @@
 	$content = $func->get_content($get->a);
 
 	if (!$content['content']) {
-		header('HTTP/1.1 404 Not Found');
-		$tpl->set_template('content', 'page-not-found.tpl.php');
+		$func->error404();
 	} else {
 		$tpl->assign('content', $content);
 	}

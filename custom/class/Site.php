@@ -1,24 +1,18 @@
 <?php
 	class Site
 	{
-		static $sites = array('hite', 'jinro');
-		
-		function set_site_data()
+		function get_sites()
 		{
-			$_SESSION['data']['theme']['global'] = array(
-				'social' => array(
-					'facebook' => 'https://www.facebook.com/hitejinro',
-					'twitter' => 'https://twitter.com/HiteJinroUSA',
-					'instagram' => 'https://www.instagram.com/hitejinrousa/'
-				),
-				'footer_navigation' => array(
-					'terms & conditions' => '/terms-and-conditions',
-					'privacy policy' => '/privacy-policy',
-					'contact us' => '/contact-us',
-				),
-			);
-
-			$_SESSION['data']['content'] = array(
+			return array_keys($this->conf->sites);
+		}
+		
+		function get_site_data($site)
+		{
+			if (!$site) {
+				$site = Site::get_current_site();
+			}
+			
+			$site_data = array(
 				'hite' => array(
 					'pages' => array(
 						array(
@@ -134,11 +128,23 @@
 					)
 				),
 			);
-		}
 
-		function get_site_data()
-		{
-			return $_SESSION['data'];
+			$temp = $site_data[$site];
+			
+			
+			$temp['social'] = array(
+				'facebook' => 'https://www.facebook.com/hitejinro',
+				'twitter' => 'https://twitter.com/HiteJinroUSA',
+				'instagram' => 'https://www.instagram.com/hitejinrousa/'
+			);
+				
+			$temp['footer_navigation'] = array(
+				'terms & conditions' => '/terms-and-conditions',
+				'privacy policy' => '/privacy-policy',
+				'contact us' => '/contact-us',
+			);
+			
+			return $temp;
 		}
 
 		function set_var($var, $val = '')
@@ -172,11 +178,7 @@
 
 		function get_current_site()
 		{
-			#if ($_SESSION['site'] && in_array($_SESSION['site'], self::$sites)) {
-			return $_SESSION['site'];
-			#} else {
-			#	return NULL;
-			#}
+			return $_SESSION['site'] ? $_SESSION['site'] : 'hite';
 		}
 
 		function get_featured_pages($pages)

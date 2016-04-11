@@ -40,6 +40,19 @@
 			}
 		}
 		
+		function error404($type)
+		{
+			$tpl = Registry::get('tpl');
+			
+			if ($type) { # add different types..
+				
+				
+			} else {
+				header('HTTP/1.1 404 Not Found');
+				$tpl->set_template('content', 'page-not-found.tpl.php');
+			}
+		}
+		
 		function user_access($action, $group = '')
 		{
 			if (!user_access($action, $group)) {
@@ -83,8 +96,6 @@
 		
 		function add_edit_link(& $content, $manager, $id)
 		{
-			$user = Registry::get('user');
-				
 			if (user_access('Access Page', 'Administrator') && $manager && $id) {
 				return "<div class='admin-editable'><a href='".$this->href($this->conf->admin.'/'.$manager, "action=edit&id=$id&destination=".base64_encode($this->href($this->conf->current_url)))."'>[edit this content]</a></div>".$content;
 			} else {
@@ -128,7 +139,7 @@
 			$row = $this->sql->fetch();
 			
 			if ($row['is_content'] && $edit_link) {
-				$row['content'] = $this->add_edit_link($row['content'], 'page', $row['page_id']);
+				$row['content'] = $this->add_edit_link($row['content'], 'pages', $row['page_id']);
 			}
 			
 			if ($set_meta) {

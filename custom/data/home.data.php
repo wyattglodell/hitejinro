@@ -1,20 +1,12 @@
 <?php
-	$site = Site::get_current_site();
-	$sites = Site::$sites;
+	$site_data = Site::get_site_data();
 
-	if ( isset($_GET['site']) && in_array($_GET['site'], $sites) ) {
-		$site = $_GET['site'];
-		Site::set_current_site($site);
-	}
+	$featured = Site::get_featured_pages($site_data['pages']);
+	
+	$brand_intro = $site_data['brand_intro'];
 
-	if ($site) {
-		r($site_data);
-		$tpl->assign('site', $site);
-		$tpl->body_classes($site);
-		$tpl->set_template('content', 'home.tpl.php');
-	} else {
-		$tpl->body_classes('split-choice');
-		$tpl->set_template('body', 'home.tpl.php');
-	}
+	$tpl->assign('featured', $featured);
+	$tpl->assign('brand_intro', $brand_intro);
 
+	$tpl->set_template('content', 'home.tpl.php');
 ?>

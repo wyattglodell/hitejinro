@@ -13,4 +13,8 @@
 	$conf->set('db_name', 'hitejinro');
 	$conf->set('db_username', 'root');
 	$conf->set('db_password', 'root');
+	
+	$conf->set('sites', array('hite'=>'Hite','jinro'=>'Jinro'));
+	
+	$conf->set('NEWS',$conf->db_prefix.'news');
 ?>

@@ -9,7 +9,7 @@
 	<nav class='footer-links'>
 		<ul>
 			<?php
-				foreach ($site_data['theme']['global']['footer_navigation'] as $slug=>$link)
+				foreach ($footer_navigation as $slug=>$link)
 				{
 					echo "<li>";
 					echo "<a href='$link'>$slug</a>";
@@ -21,7 +21,7 @@
 	<div class='social-links'>
 		<ul>
 			<?php
-				foreach ($site_data['theme']['global']['social'] as $social=>$link)
+				foreach ($social_links as $social=>$link)
 				{
 					echo "<li>";
 					echo "<a href='$link'><span class='icon icon-$social'></span></a>";
