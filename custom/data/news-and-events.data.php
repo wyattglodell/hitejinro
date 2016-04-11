@@ -5,7 +5,7 @@
 	
 	
 	if ($get->b) {
-		$sql->query("SELECT *, DATE_FORMAT('$conf->sql_date', news_dt) as date_formatted FROM $conf->NEWS WHERE site = '$site' AND status = 1 AND alias = '$get->b'");
+		$sql->query("SELECT *, DATE_FORMAT('$conf->sql_date', news_dt) as date_formatted FROM $conf->NEWS WHERE site = '$site' AND status = 1 AND alias = '".$sql->sanitize($get->b)."'");
 		$news = $sql->fetch();
 		
 		if ($news) {

@@ -178,7 +178,7 @@
 
 		function get_current_site()
 		{
-			return $_SESSION['site'] ? $_SESSION['site'] : 'hite';
+			return $_SESSION['site'];
 		}
 
 		function get_featured_pages($pages)

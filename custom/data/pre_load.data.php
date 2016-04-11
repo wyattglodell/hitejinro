@@ -1,4 +1,6 @@
 <?php
+	$anonymous = array ('privacy-policy','terms-and-conditions', 'home','entry');
+
 	if ($get->a != 'entry' && !Site::age_verified()) {
 		$func->redirect($conf->https.'/entry');
 	}
@@ -9,7 +11,8 @@
 	
 	$site = Site::get_current_site();
 
-	if ($get->a != 'home' && !$site) {
+	if (!in_array($get->a, $anonymous) && !$site) {
+		
 		$func->redirect($conf->https.'/home');
 	}
 
