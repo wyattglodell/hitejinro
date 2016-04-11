@@ -17,4 +17,5 @@
 	$conf->set('sites', array('hite'=>'Hite','jinro'=>'Jinro'));
 	
 	$conf->set('NEWS',$conf->db_prefix.'news');
+	$conf->set('FAN_PAGE',$conf->db_prefix.'fan_page');
 ?>

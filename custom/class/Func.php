@@ -22,6 +22,7 @@
 				'user_roles' => 'icon-users2',
 				'webforms' => 'icon-insert-template',
 				'delete_archive' => 'icon-remove2',
+				'fan_page' => 'icon-baseball',
 				'news' => 'icon-mic',
 				'pages' => 'icon-stack-empty'
 			);

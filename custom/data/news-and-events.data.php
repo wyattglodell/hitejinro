@@ -5,7 +5,7 @@
 	
 	
 	if ($get->b) {
-		$sql->query("SELECT *, DATE_FORMAT('$conf->sql_date', news_dt) as date_formatted FROM $conf->NEWS WHERE site = '$site' AND status = 1 AND alias = '".$sql->sanitize($get->b)."'");
+		$sql->query("SELECT *, DATE_FORMAT(news_dt, '$conf->sql_date') as date_formatted FROM $conf->NEWS WHERE site = '$site' AND status = 1 AND alias = '".$sql->sanitize($get->b)."'");
 		$news = $sql->fetch();
 		
 		if ($news) {
@@ -17,7 +17,7 @@
 			$func->error404();
 		}
 	} else {
-		$sql->query("SELECT *, DATE_FORMAT('$conf->sql_date', news_dt) as date_formatted FROM $conf->NEWS WHERE site = '$site' AND status = 1 ORDER BY news_dt DESC LIMIT 10");
+		$sql->query("SELECT *, DATE_FORMAT(news_dt, '$conf->sql_date') as date_formatted FROM $conf->NEWS WHERE site = '$site' AND status = 1 ORDER BY news_dt DESC LIMIT 10");
 		while ($row = $sql->fetch())
 		{
 			$row['photo'] = $func->get_img($row['photo'], 'tiny');
