@@ -1987,7 +1987,7 @@
 					if (function_exists('pre_process')) {
 						$post = call_user_func('pre_process', $post);	
 					}
-	
+
 					$processed = $this->process($post);
 				} else {
 					if ($_SESSION['admin_form_return_data']) {
