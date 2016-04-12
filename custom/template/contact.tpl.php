@@ -1,3 +1,3 @@
 <?php
-	echo "<p>".Site::get_current_site()." contact</p>";
+	echo "<p>$current_site contact</p>";
 ?>

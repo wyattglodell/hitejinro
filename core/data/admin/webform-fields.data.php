@@ -9,7 +9,7 @@
 	
 	$admin->set_ordering('weight');
 		
-	$admin->set_parent('administrator:webform', 'name', $conf->WEBFORM, 'webform_id');
+	$admin->set_parent('administrator:webforms', 'name', $conf->WEBFORM, 'webform_id');
 			
 	$admin->add_field('weight','Weight', '50|center|sort');
 	$admin->add_field('name','Name', '100|center|sort');
@@ -19,7 +19,15 @@
 	$admin->add_field('options','Options', '200|center|sort');
 	$admin->add_toggle('required','Required', 'checked.gif','unchecked.gif');
 	$admin->add_toggle('unique','Unique', 'checked.gif','unchecked.gif');
-		
+	
+	$admin->form_field('weight', 'Weight', 'hidden');
+	$admin->form_field('name', 'Name', 'hidden');
+	$admin->form_field('label', 'Weight', 'hidden');
+	$admin->form_field('type', 'Weight', 'hidden');
+	$admin->form_field('subtype', 'Weight', 'hidden');
+	$admin->form_field('options', 'Weight', 'hidden');
+	$admin->form_field('required', 'Weight', 'hidden');
+	$admin->form_field('unique', 'Weight', 'hidden');
 
 	$tpl->assign($admin->parent_id, $admin->pid);
 	$tpl->assign('new_weight',$admin->get_next_weight());
@@ -29,6 +37,7 @@
 	
 	function pre_process($data)
 	{
+
 		if ($data['options'] == 'custom') {
 			$data['options'] = $data['custom_options'];
 		}
