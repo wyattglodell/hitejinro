@@ -32,9 +32,9 @@
 			<img class='brand-logo' src="/public/img/logo_light_<?php echo $site ?>.png">
 			<?php
 				echo "<h2 class='headline'>$brand_intro[headline]</h2>";
-				echo "<p class='body-text'>$brand_intro[description]</p>";
+				echo "<p class='copy'>$brand_intro[description]</p>";
 			?>
-			<a class='btn-sub' href="/products">Learn more</a>		
+			<a class='btn-main' href="/products">Learn more</a>		
 		</div>
 		<div class='img-wrapper'>
 			<img class='brand-img' src="/public/img/<?php echo $site."/".$brand_intro[img] ?>">

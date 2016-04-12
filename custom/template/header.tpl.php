@@ -9,7 +9,7 @@
 <div class='container ctrl-links'>
 	<a id="menu-toggle"><span></span></a>
 	<div class='logo-wrapper'>
-		<a class='site-logo' href="?site=<?php echo $current_site ?>">
+		<a class='site-logo mobile-logo' href="?site=<?php echo $current_site ?>">
 			<img src="/public/img/logo_<?php echo $current_site ?>.png"
 				 srcset="/public/img/logo_<?php echo $current_site ?>.png 768w,
 				 		/public/img/logo_sm_<?php echo $current_site ?>.png 310w">
@@ -19,9 +19,7 @@
 <div id='links-panel' class='container'>
 	<nav class='nav-links'>
 		<a class='site-logo' href="?site=<?php echo $current_site ?>">
-			<img src="/public/img/logo_<?php echo $current_site ?>.png"
-				 srcset="/public/img/logo_<?php echo $current_site ?>.png 768w,
-				 		/public/img/logo_sm_<?php echo $current_site ?>.png 310w">
+			<img src="/public/img/logo_<?php echo $current_site ?>.png">
 		</a>
 		<ul>
 			<?php

@@ -3,7 +3,7 @@
 		<h2 class='title'>Get our newsletter</h2>
 		<div class='field-row'>
 			<input ref='email' type='email' placeholder='E-mail address' />
-			<button class='btn-main' type='submit'>Sign up</button>		
+			<button class='btn-sub' type='submit'>Sign up</button>		
 		</div>
 	</div>
 	<nav class='footer-links'>
