@@ -21,6 +21,7 @@
 				'icons' => 'icon-lab',
 				'user_roles' => 'icon-users2',
 				'webforms' => 'icon-insert-template',
+				'product' => 'icon-bottle2',
 				'delete_archive' => 'icon-remove2',
 				'fan_page' => 'icon-baseball',
 				'news' => 'icon-mic',
