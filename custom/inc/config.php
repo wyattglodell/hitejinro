@@ -18,5 +18,6 @@
 	
 	$conf->set('NEWS',$conf->db_prefix.'news');
 	$conf->set('FAN_PAGE',$conf->db_prefix.'fan_page');
+	$conf->set('RECIPE',$conf->db_prefix.'recipe');
 	$conf->set('PRODUCT',$conf->db_prefix.'product');
 ?>
