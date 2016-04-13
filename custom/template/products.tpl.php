@@ -1,7 +1,10 @@
+<?php if ($product_top_content) { ?>
 <div class='product-top-content'>
-	<?php echo $product_top_content ?>
+	<div class="container">
+		<?php echo $product_top_content ?>
+	</div>
 </div>
-
+<?php } ?>
 
 <?php
 	if ($products) {
@@ -11,10 +14,14 @@
 			
 			echo "
 				<div class='product $odd'>
-					<img src='$v[image]'>
-					
-					<h2>$v[name]</h2>
-					<p>$v[content]</p>
+					<div class='img-wrapper'>
+						<img src='$v[image]'>
+					</div>
+					<div class='text-wrapper'>
+						<h2 class='headline'>$v[name]</h2>
+						<div class='copy'>$v[content]</div>
+						<a href='/' class='btn-main'>Find ".ucfirst($site)."</a>
+					</div>
 				</div>
 			";
 		}

@@ -40,10 +40,8 @@
 			<img class='brand-img' src="/public/img/<?php echo $site."/".$brand_intro[img] ?>">
 		</div>
 	</section>
-	<section id='instagram'>
+	<section id='instafeed-wrapper'>
 		<h2 class='headline'><span>#<?php echo $site ?></span> on Instagram</h2>
-		<div id='instagram-feed'>
-			
-		</div>
+		<div id='instafeed' data-site='<?php echo $site ?>'></div>
 	</section>
 <?php } ?>

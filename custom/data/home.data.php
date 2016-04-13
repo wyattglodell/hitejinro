@@ -7,6 +7,7 @@
 
 	$tpl->assign('featured', $featured);
 	$tpl->assign('brand_intro', $brand_intro);
-
+	$tpl->js('instafeed.min.js', '', true);
+	$tpl->js('home.js', '', true);
 	$tpl->set_template('content', 'home.tpl.php');
 ?>
