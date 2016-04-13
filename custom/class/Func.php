@@ -19,6 +19,7 @@
 				'menu' => 'icon-tree5',
 				'users' => 'icon-user-plus2',
 				'icons' => 'icon-lab',
+				'recipe' => 'icon-food2',
 				'user_roles' => 'icon-users2',
 				'webforms' => 'icon-insert-template',
 				'product' => 'icon-bottle2',
