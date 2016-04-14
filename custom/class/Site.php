@@ -141,7 +141,7 @@
 			$temp['footer_navigation'] = array(
 				'terms & conditions' => '/terms-and-conditions',
 				'privacy policy' => '/privacy-policy',
-				'contact us' => '/contact-us',
+				'contact us' => '/contact',
 			);
 			
 			return $temp;

@@ -159,7 +159,7 @@ body.login #content { margin: 0; }
 	#options-box { padding: 5px; float: left; } 
 		#options-box a { text-decoration: none; margin-right: 8px; }
 		#options-box img { vertical-align: middle; position: relative; top: -1px; }
-	.big-links .big-link a { text-transform: uppercase; font-weight: 300; background: #f9f9f9; padding: 15px; float: left; margin: 0 20px 20px 0; font-size: 16px; border: 1px solid #e9e9e9; min-width: 7%; text-align: center; cursor: pointer; }
+	.big-links .big-link a { text-decoration: none; text-transform: uppercase; font-weight: 300; background: #f9f9f9; padding: 15px; float: left; margin: 0 20px 20px 0; font-size: 16px; border: 1px solid #e9e9e9; min-width: 7%; text-align: center; cursor: pointer; }
 	.big-links .big-link a:hover { background: #eee;}
 		.big-links span.icon { font-size: 40px; display: block; margin-bottom: 10px;  }
 	

@@ -22,7 +22,8 @@
 		$admin->add_link($conf->admin.'/webform-generate','pid=', 'icon-code', 'Generate Code','popup');
 	}
 	
-	$admin->add_link($conf->admin.'/webform-submissions', 'action=csv&pid=', 'icon-download2', 'Download','');
+	$admin->add_link($conf->admin.'/webform-submissions', 'action=csv&type=new&pid=', 'icon-download2', 'Download New','');
+	$admin->add_link($conf->admin.'/webform-submissions', 'action=csv&pid=', 'icon-download2', 'Download All','');
 	
 	$admin->form_field('name','Name','text', array('final'=>true));
 	$admin->form_field('email','Email','text',array('default_value'=>'default'));
@@ -34,8 +35,6 @@
 	if (user_access('Manage Webforms', 'Webforms')) {
 		$admin->form_field('captcha','Use Captcha','toggle');
 	}
-	
-
 	
 	$admin->action();
 ?>

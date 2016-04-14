@@ -16,6 +16,18 @@
 		$func->redirect($conf->https.'/home');
 	}
 
+
+	if ($_POST['action'] == 'submit-mailinglist') {
+		$webform = new Webform('mailinglist');
+		$webform->load();
+		
+		$result = $webform->submit($_POST);
+		$func->reload($result['msg']);
+	}
+
+
+
+
 	$tpl->css('normalize.css', true);
 	$tpl->css('main.css', true);
 	$tpl->js('custom.js', '', true);
