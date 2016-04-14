@@ -1,7 +1,7 @@
 <section class='section-header'>
 	<div class='page-hero'>
 		<div class='title-wrapper'>
-			<h1 class='page-title'><span>Number One Selling</span> <span>Spirit Brand in the World</span></h1>
+			<h1 class='page-title'><span>#1 Selling Spirit</span> <span>Brand in the World</span></h1>
 		</div>
 	</div>
 	<div class="img-wrapper">
@@ -27,6 +27,10 @@
 		</div>
 		<div class="img-wrapper">
 			<img src="/public/img/jinro/about_life2.jpg" alt="">
+		</div>
+		<div class='text-wrapper'>
+			<h3 class="headline">Fun facts about JINRO</h3>
+			<p>What’s the most popular liquor brand in the world? It’s Jinro Soju. Jinro Soju out sold global brands such as Smirnoff, Bacardi and Jack Daniel’s. You ask how many cases? How about in tunes of more than 71 Million cases. It’s more than number 2 and 3 brands combined according to Vinepair.com.</p>
 		</div>
 	</div>
 </section>

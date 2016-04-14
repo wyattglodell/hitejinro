@@ -326,6 +326,7 @@ b, strong {
 }
 
 .section-title {
+	margin-bottom: 0.5rem;
 	@include bp(desktop) {
 		font-size: 2.5em;
 	}
@@ -808,7 +809,7 @@ footer {
 	}
 }
 
-.product {
+.product, .recipe {
 	.btn-main {
 		display: none;
 	}
@@ -816,21 +817,30 @@ footer {
 		background: none;
 	}
 	.img-wrapper {
-		@extend .theme-bgColor;
 		display: flex;
-		justify-content: center;
 		align-items: flex-end;
 		background-repeat: no-repeat;
 		background-position: bottom center;
 		background-size: contain;
-		padding-top: 1em;
 	}
 	.text-wrapper {
 		@extend .container;
 		.headline {
 			@extend .font-header-heavy;
-			@extend .theme-color;
 			margin: 0.5rem 0 0;
+		}
+	}
+}
+
+.product {
+	.img-wrapper {
+		@extend .theme-bgColor;
+		justify-content: center;
+		padding-top: 1em;
+	}
+	.text-wrapper {
+		.headline {
+			@extend .theme-color;
 		}
 	}
 	.hite & {
@@ -912,6 +922,79 @@ footer {
 			padding-left: 0;
 			padding-right: 0;
 		}
+	}
+}
+
+.recipe {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+	.img-wrapper {
+		flex: 0 0 40%;
+		justify-content: flex-end;
+		order: 1;
+	}
+	.text-wrapper {
+		flex: 0 1 480px;
+		padding-top: 0;
+		padding-bottom: 0;
+		ul {
+			margin-bottom: 0;
+		}
+	}
+	&.odd {
+		&:after {
+			transform: rotate(10deg) translate(35%, -20%);
+		}
+		.img-wrapper {
+			justify-content: flex-start;
+			order: 0;
+		}
+	}
+	&:not(.odd) {
+		&:after {
+			transform: rotate(10deg) translate(-45%, -10%);
+		}
+	}
+	@include bp(most) {
+		&:after {
+			@extend .theme-bgColor;
+			content: ' ';
+			display: block;
+			width: 100%;
+			height: 180%;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.text-wrapper {
+			font-size: 1.25em;
+			z-index: 1;
+			color: #ffffff;
+		}
+	}
+}
+
+.online-retailers {
+	a {
+		@extend .theme-bgColor;
+		color: #ffffff;
+		padding: 4px 8px;
+		&:hover {
+			text-decoration: underline;
+		}
+		@include bp(most) {
+			font-size: 1.5em;
+		}
+	}
+}
+
+.fb-container {
+	text-align: center;
+	.section-title {
+		margin-top: 0;
 	}
 }
 
@@ -1032,7 +1115,6 @@ body {
 				display: flex;
 				justify-content: space-between;
 				@include bp(most) {
-					min-width: 13em;
 					align-self: center;					
 				}
 			}
@@ -1130,6 +1212,11 @@ body {
 			.section-footer .page-hero:after {
 				background-image: url('../img/hite/about_footer_hero.jpg');
 			}
+			.section-header .page-title {
+				@include bp(most) {
+					min-width: 13em;
+				}
+			}
 			.section-footer {
 				.copy {
 					&:before {
@@ -1180,7 +1267,10 @@ body {
 			}
 			.section-header {
 				.page-title {
-
+					min-width: 18em;
+					span:first-child {
+						margin: 0 3em 0 auto;
+					}
 				}
 			}
 		}
@@ -1224,26 +1314,39 @@ body {
 		&.jinro .page-hero:after {
 			background-image: url('../img/jinro/news_events_bg.jpg');
 		}
+		@include bp(most) {
+			.page-content {
+				display: flex;
+			}
+			.lists-container {
+				flex: 1 1 auto;
+			}
+			.fb-container {
+				flex: 0 0 300px;
+				.section-title {
+					margin-bottom: 2rem;
+				}
+			}
+		}
+		@include bp(desktop) {
+			.fb-container {
+				flex: 0 0 340px;
+			}
+		}		
+		.section-title {
+			margin: 0.5rem 0 0;
+		}
 		.lists-container {
 			@include bp(large) {
 				display: flex;
 				justify-content: center;
 				.list-container {
 					flex: 0 1 600px;
-					&:first-child {
-						margin-right: 2em;
-					}
-					&:nth-child(2n) {
-						margin-left: 2em;
-					}
+					margin-right: 2em;
 				}
 			}
 		}
 		.list-container {
-			.section-title {
-				display: inline-block;
-				margin: 0.5rem 0 0;
-			}
 			&.hite {
 				.section-title {
 					border-color: $color-hite-main;
@@ -1296,15 +1399,31 @@ body {
 			}
 		}
 	}
+	&.where-to-buy {
+		#content-box {
+			text-align: center;
+			.img-wrapper {
+				position: relative;
+				.title-wrapper {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					color: $color-gray-light;
+					background-color: rgba(#000000, 0.5);
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					text-shadow: 0 0 3em rgba(#000000, 0.5);
+				}
+			}
+		}
+	}
 	&.fan-page {
 		.page-hero:after {
 			background-image: url('../img/hite/fan_bg.jpg');
 		}
 		.list-container .title-wrapper {
 			margin-bottom: 2em;
-			.section-title {
-				margin-bottom: 0;
-			}
 		}
 		@include bp(most) {
 			.page-content {
@@ -1608,8 +1727,6 @@ body {
 		}
 	}
 }
-
-
 
 
 
