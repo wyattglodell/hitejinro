@@ -15,13 +15,14 @@
 	
 	$webform_id = $admin->pid;
 	
-	$sql->query("SELECT *,t.submission_id FROM $admin->tbl t LEFT JOIN $conf->WEBFORM_SUBMISSION_FIELD w ON t.submission_id = w.submission_id WHERE t.webform_id = $webform_id ORDER BY t.submission_date DESC");
+	$sql->query("SELECT *,t.submission_id,t.downloaded FROM $admin->tbl t LEFT JOIN $conf->WEBFORM_SUBMISSION_FIELD w ON t.submission_id = w.submission_id WHERE t.webform_id = $webform_id ORDER BY t.submission_date DESC");
 	while ($row = $sql->fetch())
 	{ 
 		if (!$data[$row['submission_id']]['ip']) $data[$row['submission_id']]['ip'] = $row['ip'];
 		if (!$data[$row['submission_id']]['submission_date']) $data[$row['submission_id']]['submission_date'] = $row['submission_date'];
 		$data[$row['submission_id']][$admin->pk] = $row[$admin->pk];
 		$data[$row['submission_id']][$row['name']] = $row['value'];
+		$data[$row['submission_id']]['downloaded'] = $row['downloaded'];
 		$fields[] = $row['name'];
 	}
 		
@@ -55,6 +56,22 @@
 	}
 	
 	if ($admin->action == 'csv') {
+		if ($data) {
+			$sql->query("UPDATE $admin->tbl SET downloaded = 1 WHERE downloaded = 0 AND submission_id IN (".implode(',', array_keys($data)).")");
+		}
+		
+		if ($get->type == 'new') {
+			$new = array();
+			foreach ($data as $k=>$v)
+			{
+				if (!$v['downloaded']) {
+					$new[$k] = $v;	
+				}
+			}
+			
+			$data = $new;
+		}
+			
 		$func->download_csv('form-submission.csv', $data);
 	} else if ($admin->action == 'edit' || $admin->action == 'add') {	
 		$admin->form();

@@ -128,7 +128,7 @@
 	
 	$admin->form_field('first_name', 'First Name', 'text', 'required');
 	$admin->form_field('last_name', 'Last Name', 'text', 'required');
-	$admin->form_field('email', 'Email', 'email', 'required');
+	$admin->form_field('email', 'Email', 'email', 'required|unique');
 
 	function pre_process($data)
 	{
