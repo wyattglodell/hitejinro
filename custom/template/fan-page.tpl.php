@@ -19,7 +19,10 @@
 					echo "
 					<li>
 						<h3 class='headline'><a href='$http/$page/$v[alias]'>$v[name] - <span class='date'>$v[md]</span></a></h3>
-						<div class='text-wrapper'>$v[content]</div>
+						<div class='text-wrapper'>
+							<div class='copy'>$v[content]</div>
+							<a class='btn-main' href='$http/$page/$v[alias]'>Read More</a>
+						</div>
 					</li>";
 					
 				}
@@ -27,5 +30,10 @@
 			</ul>		
 		</div>
 	</div>
-	<div id='fans-image'></div>
+	<div id='fans-image'>
+		<img src="/public/img/hite/fans1.jpg" alt="">
+		<img src="/public/img/hite/fans2.jpg" alt="">
+		<img src="/public/img/hite/fans3.jpg" alt="">
+		<img src="/public/img/hite/fans4.jpg" alt="">
+	</div>
 </div>

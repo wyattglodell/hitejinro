@@ -30,7 +30,7 @@
 		</div>
 		<div class='text-wrapper'>
 			<h3 class="headline">Fun facts about HITE</h3>
-			<p>On June 12, 2007, Hite beer reached a sales milestone of 20 billion bottles -- a feat it achieved in less than 15 years after its launch. Hite beer is the country's ONLY brand to have sold this many bottles — officially making it Korea's #1 selling locally produced beer!</p>
+			<p>On June 12, 2007, Hite beer reached a sales milestone of <strong>20 billion bottles</strong> -- a feat it achieved in <strong>less than 15 years</strong> after its launch. Hite beer is the country's ONLY brand to have sold this many bottles — officially making it Korea's #1 selling locally produced beer!</p>
 		</div>
 	</div>
 </section>

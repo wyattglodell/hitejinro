@@ -32,6 +32,8 @@
 	}
 	
 	$(function() {
-		setInstafeed($('#instafeed').data('site'), 6);
+		var site = $('#instafeed').data('site');
+
+		if (site) setInstafeed(site, 6);
 	});
 })();

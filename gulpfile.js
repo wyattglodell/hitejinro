@@ -2,7 +2,9 @@ var gulp = require('gulp'),
 	changed = require('gulp-changed'),
 	sass = require('gulp-sass'),
 	prefix = require('gulp-autoprefixer'),
-	minify = require('gulp-minify-css');
+	minify = require('gulp-minify-css'),
+	imagemin = require('gulp-imagemin'),
+	pngquant = require('imagemin-pngquant');
 
 var src = './custom/inc/scss/',
 	dist = './public/css/',
@@ -23,6 +25,15 @@ gulp.task('compile', function() {
 
 gulp.task('watch', function() {
 	gulp.watch(srcStyles, ['compile']);
+});
+
+gulp.task('imagemin', function() {
+	gulp.src('./custom/inc/img/**/*')
+		.pipe(imagemin({
+			progressive: true,
+			use: [pngquant()]
+		}))
+		.pipe(gulp.dest('./public/img'));
 });
 
 gulp.task('default', ['compile', 'watch']);

@@ -135,7 +135,10 @@
 			$temp['social'] = array(
 				'facebook' => 'https://www.facebook.com/hitejinro',
 				'twitter' => 'https://twitter.com/HiteJinroUSA',
-				'instagram' => 'https://www.instagram.com/hitejinrousa/'
+				'instagram' => array(
+					'hite' => 'https://www.instagram.com/hite_beer/',
+					'jinro' => 'https://www.instagram.com/jinrosoju_usa/',
+				)
 			);
 				
 			$temp['footer_navigation'] = array(

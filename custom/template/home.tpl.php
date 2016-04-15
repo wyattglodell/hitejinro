@@ -1,14 +1,14 @@
 <?php if (!$site) { ?>
 	<div id='choices-container'>
-		<div>
+		<div class='choice'>
 			<a href='?site=hite'><img src='/public/img/split_hite.png'></a>
 		</div>
-		<div>
+		<div class='choice'>
 			<a href='?site=jinro'><img src='/public/img/split_jinro.png'></a>
 		</div>
 	</div>
 	<div id='center-logo'>
-		<img src='/public/img/logo_color.png' />
+		<img src='/public/img/logo_public.png' />
 	</div>
 <?php } else { ?>
 	<section id='featured'>
@@ -41,7 +41,7 @@
 		</div>
 	</section>
 	<section id='instafeed-wrapper'>
-		<h2 class='headline'><span>#<?php echo $site ?></span> on Instagram</h2>
+		<h2 class='headline'><a href='<?php echo $social_links[instagram][$site] ?>' target='_blank'><span>#<?php echo $site ?></span></a> on Instagram</h2>
 		<div id='instafeed' data-site='<?php echo $site ?>'></div>
 	</section>
 <?php } ?>

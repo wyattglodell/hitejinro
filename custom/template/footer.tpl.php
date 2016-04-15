@@ -5,7 +5,7 @@
         	<form method='post' action='<?php echo $url ?>'>
 	            <input type='hidden' name='action' value='submit-mailinglist'>
 				<input ref='email' type='email' placeholder='E-mail address' name='email'/>
-				<button class='btn-main' type='submit'>Sign up</button>	
+				<button class='btn-sub' type='submit'>Sign up</button>	
             </form>	
 		</div>
 	</div>
@@ -24,10 +24,15 @@
 	<div class='social-links'>
 		<ul>
 			<?php
-				foreach ($social_links as $social=>$link)
+				foreach ($social_links as $social=>$v)
 				{
+					if ($social == 'instagram') {
+						$link = $v[$site];
+					} else {
+						$link = $v;
+					}
 					echo "<li>";
-					echo "<a href='$link'><span class='icon icon-$social'></span></a>";
+					echo "<a href='$link' target='_blank'><span class='icon icon-$social'></span></a>";
 					echo "</li>";
 				}
 			?>

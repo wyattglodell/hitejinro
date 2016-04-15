@@ -9,7 +9,7 @@
 	</div>
 	<div class='text-wrapper'>
 		<h3 class='headline'>Since its launch in 1924</h3>
-		<p class="copy">Jinro has consistently held is position as the number one soju brand in Korea. As such, it is not an exaggeration to say that Jinro Soju has played a pivotal role in establishing and evolving Korea’s drinking culture. Currently, Jinro Chamisul Soju holds more than 50% of the country’s market share.</p>
+		<p class="copy">Jinro has consistently held its position as the number one soju brand in Korea. As such, it is not an exaggeration to say that Jinro Soju has played a pivotal role in establishing and evolving Korea’s drinking culture. Currently, Jinro Chamisul Soju holds more than 50% of the country’s market share.</p>
 	</div>
 </section>
 <section class='section-body'>

@@ -2,7 +2,7 @@
     <header>
         <?php echo $tpl->header?>
     </header>
-    
+    <div id="mobile-nav-blind"></div>
     <main>
         <div id='breadcrumb-box'>
             <?php echo $tpl->breadcrumb?>

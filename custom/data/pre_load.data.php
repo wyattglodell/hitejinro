@@ -1,7 +1,8 @@
 <?php
 	$anonymous = array ('privacy-policy','terms-and-conditions', 'home','entry');
+	$public_pages = array('privacy-policy','terms-and-conditions');
 
-	if ($get->a != 'entry' && !Site::age_verified()) {
+	if ($get->a != 'entry' && !Site::age_verified() && !in_array($get->a, $public_pages)) {
 		$func->redirect($conf->https.'/entry');
 	}
 
@@ -12,7 +13,6 @@
 	$site = Site::get_current_site();
 
 	if (!in_array($get->a, $anonymous) && !$site) {
-		
 		$func->redirect($conf->https.'/home');
 	}
 
@@ -33,12 +33,15 @@
 	$tpl->js('custom.js', '', true);
 
 	$tpl->assign('favicon', $conf->public.'/img/favicon.png', true);
+	$tpl->assign('metadescription', 'Discover Hite, the Great Korean Lager beer. Our beer refreshes better than anything under the hot sun or after a hard day of work.', true);
 	
 	$site_data = Site::get_site_data($site);
 	
 	if (!$site) {
-		$tpl->body_classes('split-choice');
-		$tpl->set_template('body', 'home.tpl.php');		
+		if (!in_array($get->a, $public_pages)) {
+			$tpl->body_classes('split-choice');
+			$tpl->set_template('body', 'home.tpl.php');			
+		}
 	} else {
 		$tpl->body_classes($site);
 		$tpl->assign('current_site', $site);

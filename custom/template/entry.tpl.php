@@ -17,6 +17,6 @@
 	
 	<div class='footer-links'>
 		<a href='/privacy-policy'>Privacy Policy</a>
-		<a href='/terms-of-use'>Terms of Use</a>
+		<a href='/terms-and-conditions'>Terms &amp; Conditions</a>
 	</div>
 </div>

@@ -25,7 +25,8 @@
 			<?php
 				foreach ($navigation as $nav)
 				{
-					echo "<li>";
+					$class= ($page == substr($nav['link'], 1)) ? "class='active'": "";
+					echo "<li $class>";
 					echo "<a href='$nav[link]'>$nav[headline]</a>";
 					echo "</li>";
 				}
@@ -35,10 +36,15 @@
 	<div class='social-links'>
 		<ul>
 			<?php
-				foreach ($social_links as $social=>$link)
+				foreach ($social_links as $social=>$v)
 				{
+					if ($social == 'instagram') {
+						$link = $v[$site];
+					} else {
+						$link = $v;
+					}
 					echo "<li>";
-					echo "<a href='$link'><span class='icon icon-$social'></span></a>";
+					echo "<a href='$link' target='_blank'><span class='icon icon-$social'></span></a>";
 					echo "</li>";
 				}
 			?>
