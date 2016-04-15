@@ -1731,8 +1731,13 @@ body {
 				a {
 					position: absolute;
 					bottom: 0;
+				}
+				img {
+					transform: translateY(10%);
+				}
+				&:hover {
 					img {
-						transform: translateY(10%);
+						transform: translateY(10%) scale3d(1.08, 1.08, 1.08);
 					}
 				}
 			}

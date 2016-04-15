@@ -1542,9 +1542,12 @@ body.terms-and-conditions .content, body.privacy-policy .content {
         #featured .featured-item:last-child a {
           position: absolute;
           bottom: 0; }
-          #featured .featured-item:last-child a img {
-            -webkit-transform: translateY(10%);
-                    transform: translateY(10%); } }
+        #featured .featured-item:last-child img {
+          -webkit-transform: translateY(10%);
+                  transform: translateY(10%); }
+        #featured .featured-item:last-child:hover img {
+          -webkit-transform: translateY(10%) scale3d(1.08, 1.08, 1.08);
+                  transform: translateY(10%) scale3d(1.08, 1.08, 1.08); } }
 
 @media (min-width: 1024px) {
   #featured {
