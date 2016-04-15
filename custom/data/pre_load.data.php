@@ -22,6 +22,10 @@
 		$webform->load();
 		
 		$result = $webform->submit($_POST);
+		
+		if ($result['msg'] == 'Your form submission has been received successfully') {
+			$result['msg'] = 'You made a great decision today.';
+		} 
 		$func->reload($result['msg']);
 	}
 
