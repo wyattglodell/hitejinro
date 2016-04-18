@@ -1,6 +1,6 @@
 <div class='page-hero'>
 	<div class='title-wrapper'>
-		<h1 class='page-title'>Hite Fan Page</h1>
+		<h1 class='page-title'>Hite Jinro Fan Page</h1>
 		<p class='copy'>Once again, Hite will be the official Korean beer for the Dodgers for 2016 season.  Stay tuned for upcoming events at Dodgers!</p>
 	</div>
 </div>
