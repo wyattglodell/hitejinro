@@ -48,7 +48,7 @@
 							'img'=>'where_to_buy.jpg',
 						),
 						array(
-							'headline'=>'hite jinro fan page',
+							'headline'=>'fan page',
 							'link'=>'/fan-page',
 							'featured'=>true,
 							'featuredOrder'=>2,
