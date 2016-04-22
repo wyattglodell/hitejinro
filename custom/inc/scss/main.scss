@@ -608,6 +608,12 @@ header {
 			background: url('../img/logo_xs_jinro.png') no-repeat;
 			background-position: -46px 50%;
 		}
+		
+		&.fan-page {
+			float: right;
+			color: white;
+			font-size: .8em;
+		}
 	}
 }
 
@@ -1011,15 +1017,13 @@ footer {
 	}
 	@include bp(large) {
 		align-items: flex-start;
-		&:nth-child(4n+3) {
-			&, & + .recipe {
+		&.odd {
 				color: white;
 				background-color: $color-jinro-main;
 				.headline {
 					color: white !important;
 				}
 			}
-		}
 		.text-wrapper {
 			margin-top: 10%;
 		}
@@ -1210,7 +1214,7 @@ body {
 				}
 				@include bp(xlarge) {
 					height: 45em;
-					margin-top: -36em;
+					margin-top: -33em;
 				}
 			}
 		}
@@ -1238,6 +1242,13 @@ body {
 				margin-bottom: 2em;
 				&:first-child {
 					border: 1px solid #000000;
+				}
+				
+				@include bp(most) {
+					&.left-copy {
+						position: absolute;
+						margin-top: -373px;
+					}
 				}
 			}
 			.img-wrapper {
@@ -1463,11 +1474,12 @@ body {
 			.fb-container {
 				flex: 0 0 340px;
 			}
+			
 			.lists-container {
 				display: flex;
 				justify-content: center;
 				.list-container {
-					flex: 0 1 600px;
+					/*flex: 0 1 600px;*/
 					margin-right: 2em;
 				}
 			}
@@ -1534,7 +1546,7 @@ body {
 				flex-wrap: wrap;
 			}
 			.recipe {
-				flex: 1 1 50%;
+				flex: 1 1 33%;
 				padding-top: 2em;
 			}
 		}

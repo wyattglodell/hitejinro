@@ -16,10 +16,10 @@
 			foreach ($featured as $item)
 			{
 				echo "<div class='featured-item'>";
-				echo "<a href='$item[link]'>";
+				echo "<a href='".($item['featuredLink'] ? $item['featuredLink'] : $item['link'])."'>";
 				echo "<img src='/public/img/".$site."/$item[img]'>";
 				echo "<div class='text-wrapper'>";
-				echo "<h2 class='headline'>$item[headline]</h2>";
+				echo "<h2 class='headline'>".($item['featuredTitle'] ? $item['featuredTitle'] : $item['headline'])."</h2>";
 				echo "<p class='subtitle'>$item[subtitle]</p>";
 				echo "</div>";
 				echo "</a>";
@@ -37,11 +37,11 @@
 			<a class='btn-main' href="/products">Learn more</a>		
 		</div>
 		<div class='img-wrapper'>
-			<img class='brand-img' src="/public/img/<?php echo $site."/".$brand_intro[img] ?>">
+			<img class='brand-img' src="/public/img/<?php echo $site."/".$brand_intro['img'] ?>">
 		</div>
 	</section>
 	<section id='instafeed-wrapper'>
-		<h2 class='headline'><a href='<?php echo $social_links[instagram][$site] ?>' target='_blank'><span>#<?php echo $site ?></span></a> on Instagram</h2>
-		<div id='instafeed' data-site='<?php echo $site ?>'></div>
+		<h2 class='headline'><a href='<?php echo $social_links['instagram'][$site] ?>' target='_blank'><span>#<?php echo $instagram_hash ?></span></a> on Instagram</h2>
+		<div id='instafeed' data-site='<?php echo $instagram_hash ?>'></div>
 	</section>
 <?php } ?>

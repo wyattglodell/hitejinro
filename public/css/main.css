@@ -475,6 +475,10 @@ header {
       width: 46px;
       background: url("../img/logo_xs_jinro.png") no-repeat;
       background-position: -46px 50%; }
+    #site-toggle-bar .site-toggle.fan-page {
+      float: right;
+      color: white;
+      font-size: .8em; }
 
 #menu-toggle {
   width: 2em;
@@ -872,10 +876,10 @@ footer {
           -ms-flex-align: start;
                   -ms-grid-row-align: flex-start;
               align-items: flex-start; }
-      .recipe:nth-child(4n+3), .recipe:nth-child(4n+3) + .recipe {
+      .recipe.odd {
         color: white;
         background-color: #60bb46; }
-        .recipe:nth-child(4n+3) .headline, .recipe:nth-child(4n+3) + .recipe .headline {
+        .recipe.odd .headline {
           color: white !important; }
       .recipe .text-wrapper {
         margin-top: 10%; } }
@@ -1032,7 +1036,7 @@ body.about .section-header .img-wrapper {
   @media (min-width: 1700px) {
     body.about .section-header .img-wrapper {
       height: 45em;
-      margin-top: -36em; } }
+      margin-top: -33em; } }
 
 body.about .section-body {
   position: relative;
@@ -1054,6 +1058,10 @@ body.about .section-body {
     margin-bottom: 2em; }
     body.about .section-body .text-wrapper:first-child {
       border: 1px solid #000000; }
+    @media (min-width: 768px) {
+      body.about .section-body .text-wrapper.left-copy {
+        position: absolute;
+        margin-top: -373px; } }
   body.about .section-body .img-wrapper {
     margin-bottom: 2em; }
     @media (min-width: 768px) {
@@ -1259,10 +1267,7 @@ body.news-and-events .fb-container .section-title {
         -ms-flex-pack: center;
             justify-content: center; }
     body.news-and-events .lists-container .list-container {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 1 600px;
-          -ms-flex: 0 1 600px;
-              flex: 0 1 600px;
+      /*flex: 0 1 600px;*/
       margin-right: 2em; } }
 
 body.where-to-buy #content-box {
@@ -1332,9 +1337,9 @@ body.fan-page .list-container .title-wrapper {
             flex-wrap: wrap; }
   body.recipes .recipe {
     -webkit-box-flex: 1;
-    -webkit-flex: 1 1 50%;
-        -ms-flex: 1 1 50%;
-            flex: 1 1 50%;
+    -webkit-flex: 1 1 33%;
+        -ms-flex: 1 1 33%;
+            flex: 1 1 33%;
     padding-top: 2em; } }
 
 body.contact.hite main {

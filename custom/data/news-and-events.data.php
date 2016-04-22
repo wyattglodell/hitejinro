@@ -20,10 +20,10 @@
 		while ($row = $sql->fetch())
 		{
 			$row['photo'] = $func->get_img($row['photo'], 'tiny');
-			$row['content'] = $func->truncate($row['content']);
+			$row['content'] = $func->truncate($row['content'], 300);
 
-			if (!is_array($news[$row['site']])) $news[$row['site']] = array();
-			$news[$row['site']][] = $row;
+			#if (!is_array($news[$row['site']])) $news[$row['site']] = array();
+			$news[] = $row;
 		}
 	
 		$tpl->assign('news', $news);

@@ -1,10 +1,13 @@
 <div id='site-toggle-bar' class="<?php echo $current_site ?>">
+	<?php /*<a href='/fan-page' class='site-toggle fan-page'>Hite Jinro Fan Page</a>*/ ?>
 	<?php
 		foreach ($sites as $v)
 		{
 			echo "<a href='?site=$v' class='site-toggle".($v === $current_site ? " active" : "")."'><span class='$v'></span></a>";
 		}
 	?>
+    
+    
 </div>
 <div class='container ctrl-links'>
 	<a id="menu-toggle"><span></span></a>

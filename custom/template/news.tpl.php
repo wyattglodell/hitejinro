@@ -1,11 +1,11 @@
-<div id="fb-root"></div>
+<?php /*<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));</script>*/ ?>
 
 <div class='page-hero'>
 	<div class='title-wrapper'>
@@ -15,31 +15,32 @@
 
 <div class='page-content container'>
 	<div class="lists-container">
+    	<div class='list-container'>
 		<?php
-			foreach ($news as $k=>$arr)
+			foreach ($news as $k=>$v)
 			{
 				echo "
-				<div class='list-container $k'>
-					<h2 class='section-title'>$k</h2>
 					<ul class='list'>";
-					foreach ($arr as $v)
-					{
+					#foreach ($arr as $v)
+					#{ <div class='text-wrapper'>
 						echo "
 						<li>
 							<a href='$http/$page/$v[alias]' class='img-wrapper'><img src='$v[photo]'></a>
-							<div class='text-wrapper'>
+							<div class=''>
 								<h3 class='headline'>$v[name]</h3>
 								<div class='copy'>$v[content]</div>
 								<a class='btn-main' href='$http/$page/$v[alias]'>Read More</a>
 							</div>
 						</li>";
-					}
-				echo "</ul></div>";
+					#}
+				echo "</ul>";
 			}
 		?>
+        </div>
 	</div>
+    <?php /*
 	<div class="fb-container">
 		<h2 class='section-title'>Like us on Facebook</h2>
 		<div class="fb-page" data-href="https://www.facebook.com/hitejinro" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/hitejinro"><a href="https://www.facebook.com/hitejinro">Hite Beer &amp; Jinro Soju</a></blockquote></div></div>
-	</div>
+	</div> */ ?>
 </div>
