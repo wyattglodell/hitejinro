@@ -29,7 +29,7 @@
 							'featured'=>true,
 							'featuredOrder'=>1,
 							'subtitle'=>'view all',
-							'img'=>'products.jpg'
+							'img'=>'fan.jpg'
 						),
 						array(
 							'headline'=>'news & events',
@@ -48,12 +48,13 @@
 							'img'=>'where_to_buy.jpg',
 						),
 						array(
-							'headline'=>'hite jinro fan page',
+							'headline'=>'fan page',
 							'link'=>'/fan-page',
 							'featured'=>true,
 							'featuredOrder'=>2,
+							'featuredTitle'=>'Hite Jinro Fan Page',
 							'subtitle'=>'learn more',
-							'img'=>'fan.jpg'
+							'img'=>'products.jpg'
 						),
 						array(
 							'headline'=>'contact',
@@ -67,7 +68,7 @@
 					'brand_intro' => array(
 						'headline' => 'It\'s more than <span>just beer</span>',
 						'description' => 'Hite is Korea\'s largest and leading brewery with approximately 60% of the nation\'s domestic beer market share. Hite has been the number one beer brand in Korea for more than 16 years, and now exports its product to loyal Hite customers in more than 50 countries around the world!',
-						'img' => 'home_brand.png'
+						'img' => 'home_brand.jpg'
 					)
 				),
 				'jinro' => array(
@@ -91,6 +92,8 @@
 						array(
 							'headline'=>'news & events',
 							'link'=>'/news-and-events',
+							'featuredTitle'=>'Hite Jinro Fan Page',
+							'featuredLink'=>'/fan-page',
 							'featured'=>true,
 							'featuredOrder'=>3,
 							'subtitle'=>'learn more',

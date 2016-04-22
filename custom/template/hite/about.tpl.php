@@ -9,18 +9,18 @@
 	</div>
 	<div class='text-wrapper'>
 		<h3 class='headline'>In 1933</h3>
-		<p class="copy">Chosen Breweries opened its doors as the first beer brewery in Korea. The company evolved over time and changed its name to Hite in 1998. Today, Hite is Korea's largest and leading brewery with approximately 60% of the nation's domestic beer market share.</p>
+		<p class="copy">Chosen Breweries opened its doors as the first beer brewery in Korea. The company evolved over time and changed its name to Hite in 1998. <br><br>In 2006, Hite became Korea's predominant brewery by reaching approximately 60% of the nation's domestic beer market share.</p>
 	</div>
 </section>
 <section class='section-body'>
 	<div class='page-hero'>
 		<div class='title-wrapper'>
-			<h2 class='section-title'>"#1 beer company for the past 16 years"</h2>
+			<h2 class='section-title'>"#1 BEER BRAND IN KOREA FOR MORE THAN 16 YEARS"</h2>
 		</div>
 	</div>
 	<div class='container'>
 		<div class="text-wrapper">
-			<p class="copy">Hite has been the number one beer brand in Korea for more than 16 years, and now exports its product to loyal Hite customers in more than 50 countries around the world!</p>
+			<p class="copy">Hite has been the number one selling beer brand in the history of Korean beer market, and now exports its product to loyal Hite customers in more than 72 countries around the world!</p>
 		</div>
 		<div class="img-wrapper">
 			<img src="/public/img/hite/about_life1.jpg" alt="">

@@ -1,6 +1,6 @@
 <?php
 	$tpl->assign('management_header', 'Store Locations');
-	
+	/*
 	if ($_FILES['file']) {
 		ini_set("auto_detect_line_endings", true);
 		$f = fopen($_FILES['file']['tmp_name'], 'r');
@@ -70,7 +70,7 @@
 	
 	
 	
-	
+	*/
 	
 	
 	
