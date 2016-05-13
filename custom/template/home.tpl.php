@@ -41,7 +41,7 @@
 		</div>
 	</section>
 	<section id='instafeed-wrapper'>
-		<h2 class='headline'><a href='<?php echo $social_links['instagram'][$site] ?>' target='_blank'><span>#<?php echo $instagram_hash ?></span></a> on Instagram</h2>
-		<div id='instafeed' data-site='<?php echo $instagram_hash ?>'></div>
+		<h2 class='headline'><a href='<?php echo $social_links['instagram'][$site] ?>' target='_blank'><span>#<?php echo strtoupper($site) ?></span></a> on Instagram</h2>
+		<div id='instafeed' data-site='<?php echo $site ?>' data-hash='<?php echo $instagram_hash ?>'></div>
 	</section>
 <?php } ?>

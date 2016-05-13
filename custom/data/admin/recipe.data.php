@@ -71,6 +71,7 @@
 	#$admin->add_link($conf->admin.'/quiz', 'pid=', 'icon-list2', 'Quiz','popup'); # pass filter=page_id:2 to populate filtering, type-redirect|type-blank|type-delete|type-hide|type-toggle
 	$admin->form_field('name','Name','text');
 	$admin->form_field('image','Image','image', 'required');
+	$admin->form_field('titlebar_color','Title Bar Color','text', 'help:In Hex Code');
 	$admin->form_field('content','Content','editor');
 	$admin->form_field('weight','Order','weight'); 
 	$admin->form_field('status','Status','toggle', array('default_value' => true));

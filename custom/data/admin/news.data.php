@@ -76,9 +76,10 @@
 	$admin->form_field('site','Site','select', array('list'=>$conf->sites,'default_value'=>'hite','required'=>true));
 	$admin->form_field('name','Name','text', 'required');
 	$admin->form_field('alias','Alias','hidden', 'alias:name');
-	$admin->form_field('photo','Photo','image', 'required');
+	$admin->form_field('photo','Photo','image', '');
 	#$admin->form_field('weight','Order','weight');
 	$admin->form_field('news_dt','Date','date', 'required');
+	$admin->form_field('url','External URL','text', '');
 	
 	#$admin->form_field('images','Images','file', "group:Photos|table:$conf->PRODUCT_IMAGE|repeat:1");
 	$admin->form_field('content','Content','editor');

@@ -46,8 +46,10 @@
 					} else {
 						$link = $v;
 					}
+					$popup = substr($link, 0, 4) == 'http' ? "_blank" : '_self';
+					
 					echo "<li>";
-					echo "<a href='$link' target='_blank'><span class='icon icon-$social'></span></a>";
+					echo "<a href='$link' target='$popup'><span class='icon icon-$social'></span></a>";
 					echo "</li>";
 				}
 			?>

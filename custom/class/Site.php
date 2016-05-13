@@ -136,11 +136,12 @@
 			
 			
 			$temp['social'] = array(
+				'heart' => '/fan-page',
 				'facebook' => 'https://www.facebook.com/hitejinro',
 				'twitter' => 'https://twitter.com/HiteJinroUSA',
 				'instagram' => array(
-					'hite' => 'https://www.instagram.com/hite_beer/',
-					'jinro' => 'https://www.instagram.com/jinrosoju_usa/',
+					'hite' => 'https://www.instagram.com/HiteJinroUSA/',
+					'jinro' => 'https://www.instagram.com/HiteJinroUSA/',
 				)
 			);
 				

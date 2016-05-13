@@ -15,30 +15,35 @@
 
 <div class='page-content container'>
 	<div class="lists-container">
-    	<div class='list-container'>
 		<?php
-			foreach ($news as $k=>$v)
+			foreach ($news as $k=>$arr)
 			{
 				echo "
+				<div class='list-container $k'>
+					<h2 class='section-title'>$k</h2>
 					<ul class='list'>";
-					#foreach ($arr as $v)
-					#{ <div class='text-wrapper'>
+					foreach ($arr as $v)
+					{
 						echo "
 						<li>
-							<a href='$http/$page/$v[alias]' class='img-wrapper'><img src='$v[photo]'></a>
-							<div class=''>
+							<span class='img-wrapper' target='$v[target]'><img src='$v[photo]'></span>
+							<div class='text-wrapper'>
 								<h3 class='headline'>$v[name]</h3>
 								<div class='copy'>$v[content]</div>
-								<a class='btn-main' href='$http/$page/$v[alias]'>Read More</a>
+						"; 
+						if ($v['more']) {
+							echo "<a class='btn-main' href='$v[more]' target='$v[target]'>Read More</a>";
+						}
+						
+						echo "
+								
 							</div>
 						</li>";
-					#}
-				echo "</ul>";
+					}
+				echo "</ul></div>";
 			}
 		?>
-        </div>
-	</div>
-    <?php /*
+	</div>    <?php /*
 	<div class="fb-container">
 		<h2 class='section-title'>Like us on Facebook</h2>
 		<div class="fb-page" data-href="https://www.facebook.com/hitejinro" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/hitejinro"><a href="https://www.facebook.com/hitejinro">Hite Beer &amp; Jinro Soju</a></blockquote></div></div>

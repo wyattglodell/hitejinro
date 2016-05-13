@@ -1,15 +1,16 @@
 <section class='section-header'>
 	<div class='page-hero'>
 		<div class='title-wrapper'>
-			<h1 class='page-title'><span>More than</span> <span>just beer</span></h1>
+			<h1 class='page-title'>
+                <table cellspacing='0' cellpadding='0' width='100%'>
+                    <tr><td valign="middle"><span>More than</span><img src="/public/img/hite/about_bottle.png" alt="hite pale lager beer"><span>just beer</span></td></tr>
+                </table>
+            </h1>
 		</div>
-	</div>
-	<div class="img-wrapper">
-		<img src="/public/img/hite/about_bottle.png" alt="hite pale lager beer">
 	</div>
 	<div class='text-wrapper'>
 		<h3 class='headline'>In 1933</h3>
-		<p class="copy">Chosen Breweries opened its doors as the first beer brewery in Korea. The company evolved over time and changed its name to Hite in 1998. <br><br>In 2006, Hite became Korea's predominant brewery by reaching approximately 60% of the nation's domestic beer market share.</p>
+		<p class="copy">Chosun Breweries opened its doors as the first beer brewery in Korea. The company evolved over time and changed its name to Hite in 1998. <br><br>In 2006, Hite became Korea's predominant brewery by reaching approximately 60% of the nation's domestic beer market share.</p>
 	</div>
 </section>
 <section class='section-body'>

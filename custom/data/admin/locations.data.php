@@ -1,78 +1,48 @@
 <?php
+	ini_set('display_errors', true);
+	error_reporting(E_ALL & ~E_NOTICE);
+	
 	$tpl->assign('management_header', 'Store Locations');
-	/*
-	if ($_FILES['file']) {
-		ini_set("auto_detect_line_endings", true);
-		$f = fopen($_FILES['file']['tmp_name'], 'r');
-
-		$sql->query("SELECT address, zip FROM $conf->STORE_LOCATOR WHERE store_id = '".Store::get_id()."'");
-		while ($data = $sql->fetch())
-		{
-			$list[ strtolower(' '.$data['address'].','.$data['zip'])] = true;
+	
+	if ($get->c == 'edit') {
+		$func->load_data('admin/location/edit');	
+	} else if ($get->c == 'import') {
+		$func->load_data('admin/location/import');	
+	} else if ($get->c == 'delete' && $get->d) {
+		$location_id = intval($get->d);
+		
+		$this->sql->query("DELETE FROM ".$conf->STORE_LOCATOR." WHERE location_id = $location_id");
+		
+		$func->log('Store address has been deleted');
+		
+		$func->redirect($https.'/'.$get->a.'/'.$get->b, 'Store address has been removed successfully');	
+	} else {
+		if ($get->state) {
+			$_SESSION['address_state'] = $get->state;
 		}
-
-		$count = 0;
-		while (($row = fgetcsv($f)) !== false)
+		
+		$sql->query("SELECT *, COUNT(*) as num FROM $conf->STORE_LOCATOR GROUP BY state");	
+		while ($row = $sql->fetch())
 		{
-			if (trim($row[0])) {
-				if (!$count++) { # check to see if the first row is a header
-					foreach ($row as $v)
-					{
-						if (strpos($v, 'address') !== false) {
-							continue 2;	
-						}
-					}
-					
-				}
-	
-				if (!$list[' '.strtolower($row[2].','.$row[6])]) {
-					
-					if (!$row['lat'] || !$row['lng']) {
-						$address = $row[2].','.$row[3].','.$row[4].','.$row[5].','.$row[6];
-					
-						$resp_json = file_get_contents("https://maps.google.com/maps/api/geocode/json?key=AIzaSyDerTRI_Lr-7eQ8xPlSR0kKatsJzQfljqI&sensor=false&address=".urlencode($address));
-						$resp = json_decode($resp_json, true);
-			
-						if ($resp['results'][0]['geometry']['location']['lat'] && $resp['results'][0]['geometry']['location']['lng']) {
-							$row['geolocation'] = $resp['results'][0]['geometry']['location']['lat'].','.$resp['results'][0]['geometry']['location']['lng'];
-							
-						}
-					} else {
-						$row['geolocation'] = $row['lat'].','.$row['lng'];	
-					}
-					
-					$row = $sql->sanitize($row);
-	
-					$sql->insert($conf->STORE_LOCATOR, [
-						'store_id' => Store::get_id(),
-						'store_name' => $row[1],
-						'address' => $row[2],
-						'address2' => $row[3],
-						'city' => $row[4],
-						'state' => $row[5],
-						'zip' => $row[6],
-						'country' => $row[7],
-						'phone' => $row[8],
-						'url' => $row[9],
-						'hour1' => $row[10],
-						'hour2' => $row[11],
-						'hour3' => $row[12],
-						'geolocation'=>$row['geolocation']
-					]);
-				} 
-			} else {
-				break;	
+			if (!$states[ $row['state'] ]) {
+				$states[ $row['state'] ] = $row['num'];
+			}
+		}
+	#	$func->publish_store_addresses();
+		
+		if ($_SESSION['address_state']) {
+			$sql->query("SELECT * FROM $conf->STORE_LOCATOR WHERE state = '".$sql->sanitize($_SESSION['address_state'])."' ORDER BY store_name");		
+			while ($row = $sql->fetch())
+			{
+				$addresses[] = $row;
 			}
 		}
 		
-		$func->redirect($conf->https.'/'.$get->a.'/'.$get->b, ($count > 1 ? 'Import successful' : 'Nothing to import'));
+		$tpl->assign('states', $states);
+		$tpl->assign('addresses', $addresses);
+		$tpl->assign('state_selected', $_SESSION['address_state']);
+		$tpl->assign('state_list', $func->get_list('states'));
+	
+		$tpl->set_template('admin', 'admin/locations.tpl.php');
 	}
-	
-	
-	
-	*/
-	
-	
-	
-	$tpl->set_template('admin', 'admin/locations.tpl.php');
 ?>

@@ -4,7 +4,9 @@
 		function admin_menu_ignore()
 		{
 			$ignore = array(); # ex: $ignore[] = 'page';
-						
+			$ignore[] = 'edit';
+			$ignore[] = 'import';
+			
 			return $ignore;
 		}
 		
@@ -120,8 +122,54 @@
 			}
 		
 			return $truncate;
-		}		
+		}	
+			
+		function utf8ize($mixed) 
+		{
+			if (is_array($mixed)) {
+				foreach ($mixed as $key => $value) {
+					$mixed[$key] = $this->utf8ize($value);
+				}
+			} else if (is_string ($mixed)) {
+				return utf8_encode($mixed);
+			}
+			return $mixed;
+		}
 		
-		
+		function publish_store_addresses()
+		{
+			$this->sql->query("SELECT * FROM ".$this->conf->STORE_LOCATOR);
+			$count = 0;
+			$locations = array();
+			
+			while ($row = $this->sql->fetch())
+			{
+				$lat = explode(',', $row['geolocation']);
+
+				array_push($locations, array(
+					'id' => ++$count,
+					'name' => $row['store_name'],
+					'address'=>$row['address'],
+					'address2'=>$row['address2'],
+					'city'=>$row['city'],
+					'state'=>$row['state'],
+					'postal'=>$row['zip'],
+					'country'=>$row['country'],
+					'phone'=>Format::phone($row['phone']),
+					'web'=>$row['url'],
+					'hours1'=>$row['hour1'],
+					'hours2'=>$row['hour2'],
+					'hours3'=>$row['hour3'],
+					'lat' =>$lat[0],
+					'lng'=>$lat[1]
+				));
+			}
+			
+			if ($locations) {
+				$json = json_encode($this->utf8ize($locations));
+			}
+			
+			file_put_contents($this->conf->public_file.'/inc/store-addresses.json', $json);
+		}
 	}
 ?>

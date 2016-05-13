@@ -63,23 +63,24 @@
 	
 	
 	#$admin->add_field('weight','Weight', '50|center|sort');
-	$admin->add_field('event_date','Date', '50|center|date');
+	$admin->add_field('event_date','Date', '50|center|date|edit');
 	
 	
-	$admin->add_field('name','Name', '200|left|sort|edit');
+	$admin->add_field('event_time','Time', '200|left|sort');
+	$admin->add_field('game','Game', '200|left|sort');
+	$admin->add_field('note','Note', '200|left|sort');
 	
-	$admin->add_toggle('status','Status');
-	#$admin->add_toggle('status','Status','icon-circle2','icon-circle2', false);
+	$admin->add_toggle('status','Status','icon-circle2','icon-circle2', false);
 	#$admin->add_toggle('status','Status','icon-checkbox','icon-checkbox-unchecked2', true);
 	
 	#$admin->add_link($conf->admin.'/quiz', 'pid=', 'icon-list2', 'Quiz','popup'); # pass filter=page_id:2 to populate filtering, type-redirect|type-blank|type-delete|type-hide|type-toggle
 	
-	$admin->form_field('name','Name','text','required');
-	$admin->form_field('alias','Alias','hidden', 'alias:name');
 	$admin->form_field('event_date','Date','date', 'required');
-	$admin->form_field('content','Content','editor', 'required'); 
+	$admin->form_field('event_time','Time','text', 'required');
+	$admin->form_field('game','Game','text', 'required');
+	$admin->form_field('note','Note','text', ''); 
+	$admin->form_field('status','Status','toggle', 'default_value:1'); 
 	#$admin->form_field('weight','Order','weight');
-	$admin->form_field('status','Status','toggle', array('default_value' => true));
 	
 	#$admin->form_field('images','Images','file', "group:Photos|table:$conf->PRODUCT_IMAGE|repeat:1");
 	#$admin->form_field('caption','Caption','text', "group:Photos|table:$conf->PRODUCT_IMAGE|repeat:1");

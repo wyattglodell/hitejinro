@@ -1,0 +1,60 @@
+.box h1.widget-title { font-size: 16px; margin: 5px 0; }
+input.add-another {background: none; border: 0; color: #1f9cfd; font-size: 12px; cursor: pointer; }
+input.add-another:hover  { color: #ff9702; }
+
+.admin-widget { background: #f1f1f1; padding: 5px; margin: 0 25px 1px 25px;}
+	.admin-widget h2 { font-size: 14px; cursor: pointer; margin: 0; font-weight: normal; }
+		.admin-widget h2 span { float: right; border: 1px solid #ccc; border-radius: 20px; background: #fff; }
+	.admin-widget .widget-content { background: #fff; display: none; margin-top: 10px; padding: 10px; }
+		.widget-content.row-0 .form-tbl-inner { margin-top: 1px; }
+	
+
+			.form-tbl { width: 100%; }
+				.form-tbl th { text-align: right; padding-right: 10px; font-size: 14px; vertical-align: top; font-weight: normal; background: #eee; }
+				.form-tbl td { vertical-align: middle; background: #fff; padding: 0px; }
+				.form-tbl td.submit-td { padding: 10px 20px 10px 150px;background: none;  }
+					.form-tbl td .help { font-size: 12px; margin-top: 3px;  clear: both; color: #999; font-weight: 300; margin-left: 5px; }
+				.form-tbl .text, .form-tbl .password, .form-tbl .textarea { width: 99%; padding: 3px 5px; background: #fff; border: 0; border-radius: 5px; } 
+					.form-tbl .group-field { background: #fff; padding: 4px;}
+					.form-tbl .group-field td { background: #fff; }
+					.form-tbl .more-btn { padding-left: 6px; }
+				.fm-img { float: left; border-right: 1px solid #aaa; padding-right: 10px; margin-right: 10px; width: 80px; }
+					.fm-img img { width: 80px; cursor: pointer; }
+				.clear-img-btn { float: left; }
+				.form-groups-tbl .group-field-col .group-field-label.big { display: block; padding: 5px 5px; font-size: 14px; }
+				
+				.form-group-tbl {  background: #f4f4f4; }
+				.form-group-tbl .field-col { padding: 5px; vertical-align: top;   }
+				.form-group-tbl.multiple .field-col { border-right: 1px solid #ccc; padding-right: 10px; }
+					.form-group-tbl.multiple .field-col label.group-field-label { display: block; font-size: 11px; }
+				
+				.form-group-tbl.multiple .field-col .text,.form-group-tbl.multiple .field-col .form-tbl .password,.form-group-tbl.multiple .field-col .textarea {  width: 97%; border: 1px solid #eee;  }
+				.form-group-tbl.repeat { border-bottom: 1px solid #eee;  }
+				.form-group-tbl.repeat:first-child { border-top: 1px solid #eee;  }
+				
+				.form-tbl .group-field td.move { vertical-align: middle; cursor: grab; cursor: -moz-grab; cursor: -webkit-grab;background: #ddd; padding: 0 10px; text-align: center; }
+				.form-tbl .group-field td.move:active { cursor: grabbing; cursor: -moz-grabbing; cursor: -webkit-grabbing; }
+				.form-tbl .group-field td.delete { vertical-align: middle; background: #ddd; text-align: center; cursor: pointer;}
+					.form-tbl .group-field td.delete span { padding: 5px 5px; }
+				.form-tbl .group-field td a.undo {  text-decoration: underline; color: #64BEFF; cursor: pointer; }
+				.form-tbl .textarea { resize: none; }
+				.form-tbl .time { width: 100px; }
+				.form-tbl input[readonly] { background: #eee;}
+				.form-tbl td.group-field-col { vertical-align: top; }
+				
+				.ui-datepicker { display: none; }
+				button.fm-img-delete { margin-top: 10px; display: block; background: none; color: #1f9cfd; font-size: 12px; padding-left: 0; }
+				button.fm-img-delete:hover { background: none; color: #0b74c5; }
+				.random-password { text-decoration: underline; cursor: pointer; margin-left: 10px; color: #777; font-weight: 300; }
+				
+			.form-tbl-inner { margin-bottom: 1px;  padding-right: 1px; }
+			
+			.form-tbl td.tab-content-td { background: #eee;  }
+			.form-tbl td.tab-list { vertical-align: top; padding: 0; background: none; width: 150px; }
+				.tab-name { background: #f9f9f9; font-size: 16px; padding: 10px 10px;  margin-bottom: 5px; cursor: pointer; color: #ccc; }
+				.tab-name.active { background: #eee; color: #333;}
+				.tab-content { display: none; padding: 1px;}
+				.tab-content.active { display: block; }
+				
+			.content-gallery .form-group-tbl.multiple .field-col[col='2'] { position: relative; border-right: none; }
+			.content-gallery .form-group-tbl.multiple .field-col[col='2']:after { content: 'OR'; display: inline-block; position: absolute; top: 50%; left: 100%; margin-left: -20px; -webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%); }

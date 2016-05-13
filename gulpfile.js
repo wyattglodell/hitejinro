@@ -36,4 +36,4 @@ gulp.task('imagemin', function() {
 		.pipe(gulp.dest('./public/img'));
 });
 
-gulp.task('default', ['compile', 'watch']);
+gulp.task('default', ['compile']);

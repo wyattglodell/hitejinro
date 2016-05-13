@@ -1,11 +1,20 @@
 <section class='section-header'>
 	<div class='page-hero'>
 		<div class='title-wrapper'>
-			<h1 class='page-title'><span>#1 Most Selling Spirit</span> <span>Brand in the World</span></h1>
+			<h1 class='page-title'>
+                <table cellspacing='0' cellpadding='0' width='100%'>
+                    <tr><td valign="middle">
+                    	<span>#1 Most Selling Spirit</span>
+                    	<img src="/public/img/jinro/about_bottle.png" alt="jinro 24">
+                         <span>Brand in the World</span>
+                     </td></tr>
+                </table>
+            
+            	
+                
+               
+            </h1>
 		</div>
-	</div>
-	<div class="img-wrapper">
-		<img src="/public/img/jinro/about_bottle.png" alt="jinro 24">
 	</div>
 	<div class='text-wrapper'>
 		<h3 class='headline'>Since its launch in 1924</h3>
