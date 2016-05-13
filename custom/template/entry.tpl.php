@@ -1,5 +1,5 @@
 <div class='container'>
-	<h1><img src='/public/img/logo_white.png' alt='logo' /></h1>
+	<h1><img src='<?php echo $http ?>/public/img/logo_white.png' alt='logo' /></h1>
 	<h2 class='headline'>We need to check your age</h2>
 	
 	<form method='post' action='<?php echo $url ?>'>
@@ -16,7 +16,7 @@
 	</form>
 	
 	<div class='footer-links'>
-		<a href='/privacy-policy'>Privacy Policy</a>
-		<a href='/terms-and-conditions'>Terms &amp; Conditions</a>
+		<a href='<?php echo $http ?>/privacy-policy'>Privacy Policy</a>
+		<a href='<?php echo $http ?>/terms-and-conditions'>Terms &amp; Conditions</a>
 	</div>
 </div>

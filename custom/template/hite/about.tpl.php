@@ -3,7 +3,7 @@
 		<div class='title-wrapper'>
 			<h1 class='page-title'>
                 <table cellspacing='0' cellpadding='0' width='100%'>
-                    <tr><td valign="middle"><span>More than</span><img src="/public/img/hite/about_bottle.png" alt="hite pale lager beer"><span>just beer</span></td></tr>
+                    <tr><td valign="middle"><span>More than</span><img src="<?php echo $http ?>/public/img/hite/about_bottle.png" alt="hite pale lager beer"><span>just beer</span></td></tr>
                 </table>
             </h1>
 		</div>
@@ -24,10 +24,10 @@
 			<p class="copy">Hite has been the number one selling beer brand in the history of Korean beer market, and now exports its product to loyal Hite customers in more than 72 countries around the world!</p>
 		</div>
 		<div class="img-wrapper">
-			<img src="/public/img/hite/about_life1.jpg" alt="">
+			<img src="<?php echo $http ?>/public/img/hite/about_life1.jpg" alt="">
 		</div>
 		<div class="img-wrapper">
-			<img src="/public/img/hite/about_life2.jpg" alt="">
+			<img src="<?php echo $http ?>/public/img/hite/about_life2.jpg" alt="">
 		</div>
 		<div class='text-wrapper'>
 			<h3 class="headline">Fun facts about HITE</h3>

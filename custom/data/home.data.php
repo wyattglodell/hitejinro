@@ -1,5 +1,6 @@
 <?php
-	$site_data = Site::get_site_data();
+	$site = Site::get_current_site();
+	$site_data = Site::get_site_data($site);
 
 	$featured = Site::get_featured_pages($site_data['pages']);
 	
@@ -8,7 +9,7 @@
 	$tpl->assign('featured', $featured);
 	$tpl->assign('brand_intro', $brand_intro);
 	
-	$site = Site::get_current_site();
+	
 	
 	if ($site == 'hite') {
 		$tpl->assign('instagram_hash', str_replace('#','', $setting->hite_instagram_hash_tag));

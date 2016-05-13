@@ -23,7 +23,7 @@
 				if ($v['image']) {
 					echo "
 					<div class='img-wrapper'>
-						<img src='$v[image]'>
+						<img src='$http$v[image]'>
 					</div>";
 				}
 				echo "

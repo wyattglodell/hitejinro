@@ -18,10 +18,10 @@
 </div>
 
 <div class='fan-grid'>
-	<div class='grid-item'><img src="/public/img/fan-1.jpg" alt=""></div>
-    <div class='grid-item'><img src="/public/img/fan-2.jpg" alt=""></div>
-    <div class='grid-item'><span class='toggle'>&plus;</span><img src="/public/img/fan-3.jpg" alt=""></div>
-    <div class='grid-item'><img src="/public/img/fan-4.jpg" alt=""></div>
+	<div class='grid-item'><img src="<?php echo $http ?>/public/img/fan-1.jpg" alt=""></div>
+    <div class='grid-item'><img src="<?php echo $http ?>/public/img/fan-2.jpg" alt=""></div>
+    <div class='grid-item'><span class='toggle'>&plus;</span><img src="<?php echo $http ?>/public/img/fan-3.jpg" alt=""></div>
+    <div class='grid-item'><img src="<?php echo $http ?>/public/img/fan-4.jpg" alt=""></div>
     <div class='grid-item text'>
     	<h1 class='page-title hite-blue'>Hite Jinro Dodgers Fan Sampling Event</h1>
         <div class='copy'>
@@ -30,10 +30,10 @@
             You can redeem at concessions where Hite Beer and Jinro Soju’s are sold. Must be 21 and over to receive discount coupons.
         </div>
 	</div>
-    <div class='grid-item special'><img src="/public/img/fan-5.jpg" alt=""></div>
-    <div class='grid-item special'><img src="/public/img/fan-6.jpg" alt=""></div>
-    <div class='grid-item special'><img src="/public/img/fan-7.jpg" alt=""></div>
-    <div class='grid-item'><img src="/public/img/fan-8.jpg" alt=""></div>
+    <div class='grid-item special'><img src="<?php echo $http ?>/public/img/fan-5.jpg" alt=""></div>
+    <div class='grid-item special'><img src="<?php echo $http ?>/public/img/fan-6.jpg" alt=""></div>
+    <div class='grid-item special'><img src="<?php echo $http ?>/public/img/fan-7.jpg" alt=""></div>
+    <div class='grid-item'><img src="<?php echo $http ?>/public/img/fan-8.jpg" alt=""></div>
     <div class='clear'></div>
 </div>
 

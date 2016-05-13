@@ -13,8 +13,8 @@
 	<a id="menu-toggle"><span></span></a>
 	<div class='logo-wrapper'>
 		<a class='site-logo mobile-logo' href="?site=<?php echo $current_site ?>">
-			<img src="/public/img/logo_<?php echo $current_site ?>.png"
-				 srcset="/public/img/logo_<?php echo $current_site ?>.png 768w,
+			<img src="<?php echo $http ?>/public/img/logo_<?php echo $current_site ?>.png"
+				 srcset="<?php echo $http ?>/public/img/logo_<?php echo $current_site ?>.png 768w,
 				 		/public/img/logo_sm_<?php echo $current_site ?>.png 310w">
 		</a>
 	</div>
@@ -22,7 +22,7 @@
 <div id='links-panel' class='container'>
 	<nav class='nav-links'>
 		<a class='site-logo' href="?site=<?php echo $current_site ?>">
-			<img src="/public/img/logo_<?php echo $current_site ?>.png">
+			<img src="<?php echo $http ?>/public/img/logo_<?php echo $current_site ?>.png">
 		</a>
 		<ul>
 			<?php
@@ -30,7 +30,7 @@
 				{
 					$class= ($page == substr($nav['link'], 1)) ? "class='active'": "";
 					echo "<li $class>";
-					echo "<a href='$nav[link]'>$nav[headline]</a>";
+					echo "<a href='$http$nav[link]'>$nav[headline]</a>";
 					echo "</li>";
 				}
 			?>
@@ -47,6 +47,7 @@
 						$link = $v;
 					}
 					$popup = substr($link, 0, 4) == 'http' ? "_blank" : '_self';
+					if ($popup == '_self') $link = $http.$link;
 					
 					echo "<li>";
 					echo "<a href='$link' target='$popup'><span class='icon icon-$social'></span></a>";

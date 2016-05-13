@@ -5,7 +5,7 @@
                 <table cellspacing='0' cellpadding='0' width='100%'>
                     <tr><td valign="middle">
                     	<span>#1 Most Selling Spirit</span>
-                    	<img src="/public/img/jinro/about_bottle.png" alt="jinro 24">
+                    	<img src="<?php echo $http ?>/public/img/jinro/about_bottle.png" alt="jinro 24">
                          <span>Brand in the World</span>
                      </td></tr>
                 </table>
@@ -32,10 +32,10 @@
 			<p class="copy">Globally, Jinro Chamisul Soju has been the world’s best-selling soju for 12 consecutive years, and has earned numerous accolades in the International Spirits Competition for its superb taste and quality.</p>
 		</div>
 		<div class="img-wrapper">
-			<img src="/public/img/jinro/about_life1.jpg" alt="">
+			<img src="<?php echo $http ?>/public/img/jinro/about_life1.jpg" alt="">
 		</div>
 		<div class="img-wrapper">
-			<img src="/public/img/jinro/about_life2.jpg" alt="">
+			<img src="<?php echo $http ?>/public/img/jinro/about_life2.jpg" alt="">
 		</div>
         <div class="text-wrapper left-copy">
             <p class="copy">

@@ -31,8 +31,11 @@
 					} else {
 						$link = $v;
 					}
+					$popup = substr($link, 0, 4) == 'http' ? "_blank" : '_self';
+					if ($popup == '_self') $link = $http.$link;
+					
 					echo "<li>";
-					echo "<a href='$link' target='_blank'><span class='icon icon-$social'></span></a>";
+					echo "<a href='$link' target='$popup'><span class='icon icon-$social'></span></a>";
 					echo "</li>";
 				}
 			?>
@@ -40,5 +43,5 @@
 	</div>
 </div>
 <div class='copyright'>
-	<small>&copy; <?php echo date("Y") ?> HiteJinro.  All rights reserved.</small>
+	<small>&copy; <?php echo date("Y") ?> HiteJinro USA.  All rights reserved.</small>
 </div>

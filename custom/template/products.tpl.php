@@ -15,7 +15,7 @@
 			echo "
 				<div class='product $odd'>
 					<div class='img-wrapper'>
-						<img src='$v[image]'>
+						<img src='$http$v[image]'>
 					</div>
 					<div class='text-wrapper'>
 						<h2 class='headline'>$v[name]</h2>

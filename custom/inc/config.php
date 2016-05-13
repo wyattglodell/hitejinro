@@ -10,9 +10,9 @@
 	$conf->set('dev_mode', true);
 	$conf->set('db_prefix', 'hitejinro_');
 	$conf->set('db_host', 'localhost');
-	$conf->set('db_name', 'hitejinro');
-	$conf->set('db_username', 'root');
-	$conf->set('db_password', 'root');
+	$conf->set('db_name', 'hjusa_2016');
+	$conf->set('db_username', 'hjusa_2016');
+	$conf->set('db_password', 'T2trkWCdQ4ei');
 	
 	$conf->set('sites', array('hite'=>'Hite','jinro'=>'Jinro'));
 	
